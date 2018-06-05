@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;1.32-PiggyBack&apos; to &apos;1.32-PiggyBack-SimpleGraph&apos;&#x0A;- Original element: &apos;1.32-PiggyBack&apos;&#x0A;- Renamed element: &apos;1.32-PiggyBack&apos;&#x0A;- Update references to refactored element" description="Rename Java project &apos;1.32-PiggyBack&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=1.32-PiggyBack" name="1.32-PiggyBack-SimpleGraph" references="true" stamp="1514931216432" version="1.0"/>
+</session>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;FileCompare.java&apos; to &apos;1.35-SumThree&apos;&#x0A;- Original project: &apos;1.325-UnweightedGraphShortestDist&apos;&#x0A;- Destination element: &apos;1.35-SumThree&apos;&#x0A;- Original element: &apos;FileCompare.java&apos;" description="Copy compilation unit" destination="=1.35-SumThree" element1="/src&lt;{FileCompare.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1515946031764" units="1" version="1.0"/>
+</session>

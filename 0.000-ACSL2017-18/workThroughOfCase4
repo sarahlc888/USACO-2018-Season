@@ -1,0 +1,64 @@
+P1: 6,7,8,9,Q,
+P2: 5, 8, 9, K, A 
+Points: 79
+
+A,9,7,T,A,9,T,A,6,4 
+
+Turn 1
+	P1 plays 8
+	points: 87
+	p1 draws A
+	p1: 6, 7, 9, Q, A
+Turn 2
+	p2 plays 9
+	points: 87
+	p2 draws 9
+	p2: 5, 8, 9, K, A
+Turn 3
+	P1 plays 9
+	points: 87
+	P1 draws 7
+	p1: 6, 7, 7, Q, A
+Turn 4
+	P2 plays 9
+	points: 87
+	P2 draws T
+	p2: 5, 8, T, K, A
+Turn 5
+	p1 plays 7
+	points 94
+	p1 draws A
+	p1: 6, 7, Q, A, A
+Turn 6
+	p2 plays T
+	points 84
+	p2 draws 9
+	p2: 5, 8, 9, K, A
+Turn 7
+	p1 plays Q
+	points 96
+	p1 draws T
+	p1: 6, 7, T, A, A
+Turn 8
+	p2 plays 9
+	point 96
+	p2 draws A
+	p2: 5, 8, K, A, A
+Turn 9
+	p1 plays T
+	point 86
+	p1 draws 6
+	p1: 6, 6, 7, A, A
+Turn 10
+	p2 plays K
+	point: 99
+	p2 draws 4
+	p2: 4, 5, 8, A, A
+Turn 11
+	P1 plays 7
+	point 100
+	p1: 6, 6, A, A
+Turn 12
+	P2 plays 8
+	point 108
+	p2: 4, 5, A, A

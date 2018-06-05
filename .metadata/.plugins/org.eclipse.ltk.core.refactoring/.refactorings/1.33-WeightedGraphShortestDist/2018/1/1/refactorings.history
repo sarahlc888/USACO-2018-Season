@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;shortestDist&apos; to &apos;ShortestDistMethod1&apos;&#x0A;- Original project: &apos;1.33-WeightedGraphShortestDist&apos;&#x0A;- Original element: &apos;shortestDist&apos;&#x0A;- Renamed element: &apos;ShortestDistMethod1&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;shortestDist&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{shortestDist.java[shortestDist" matchStrategy="1" name="ShortestDistMethod1" qualified="false" references="true" similarDeclarations="false" stamp="1514936537338" textual="false" version="1.0"/>
+</session>

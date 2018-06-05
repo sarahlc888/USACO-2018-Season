@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;tarr&apos; in &apos;STSumImp.SegmentTreeSum&apos; to &apos;treearr&apos;&#x0A;- Original project: &apos;1.41-SegmentTreeSum&apos;&#x0A;- Original element: &apos;STSumImp.SegmentTreeSum.tarr&apos;&#x0A;- Renamed element: &apos;STSumImp.SegmentTreeSum.treearr&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;tarr&apos;" flags="589830" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;{STSumImp.java[STSumImp[SegmentTreeSum^tarr" name="treearr" references="true" setter="false" stamp="1518061954298" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;1.05-Queries-CountingHaybales/Queries.in&apos; to &apos;haybales.in&apos;" description="Rename resource &apos;Queries.in&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Queries.in" name="haybales.in" stamp="1511310268264" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;1.05-Queries-CountingHaybales/Queries.out&apos; to &apos;haybales.out&apos;" description="Rename resource &apos;Queries.out&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Queries.out" name="haybales.out" stamp="1511310335934" updateReferences="true"/>
+</session>
