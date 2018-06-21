@@ -11,7 +11,7 @@ public class GraphImp0 {
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		int N = Integer.parseInt(st.nextToken()); // number of nodes
 		int E = Integer.parseInt(st.nextToken()); // num edges
-		Graph g = new Graph(N, E); // create the graph
+		Graph g = new Graph(N); // create the graph
 		
 		int[][] adjMatrix = new int[N][N]; // adjacency matrix
 		
@@ -51,7 +51,7 @@ public class GraphImp0 {
 		int[] nodes; // nodes
 		AdjList[] edges; // adjacency lists
 		
-		public Graph(int n, int e) { // make a graph with n elements
+		public Graph(int n) { // make a graph with n elements
 			nodes = new int[n];
 			for (int i = 0; i < n; i++) {
 				nodes[i] = i;

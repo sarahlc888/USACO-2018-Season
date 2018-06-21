@@ -2,44 +2,44 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Sys" key="selection"/>
+		<item value="pool: 2 loss: 1 i: 1 s:" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="Sys"/>
-			<item value="System.out.println(&quot;B&quot;"/>
-			<item value="B"/>
-			<item value="E1b"/>
-			<item value="leftBound"/>
-			<item value="rightBound"/>
-			<item value="max"/>
-			<item value="(int)"/>
-			<item value="R - 1"/>
-			<item value="R + 1"/>
-			<item value="R+1"/>
-			<item value="R-1"/>
-			<item value="double"/>
-			<item value="float"/>
-			<item value="+ 10"/>
+			<item value="pool: 2 loss: 1 i: 1 s:"/>
+			<item value="System.out"/>
+			<item value="DP1"/>
+			<item value="pts"/>
+			<item value="pos"/>
+			<item value="269"/>
+			<item value="//System"/>
+			<item value="suffmax"/>
+			<item value="suffmax: 0"/>
+			<item value="285"/>
+			<item value="285&apos;"/>
+			<item value="269285285"/>
+			<item value="269285"/>
+			<item value="allVisited"/>
+			<item value="2 4  2 1"/>
 		</list>
 		<list key="replacehistory">
-			<item value="R-10"/>
-			<item value="long"/>
-			<item value="//System"/>
-			<item value="arr1"/>
+			<item value="//System.out"/>
+			<item value="DP2"/>
+			<item value="pts2"/>
+			<item value="pos2"/>
+			<item value="System"/>
+			<item value="System.out"/>
 			<item value="//Sys"/>
 			<item value="Sys"/>
-			<item value="first"/>
-			<item value="  neigh:"/>
-			<item value="  cp"/>
-			<item value="cp:"/>
-			<item value=" "/>
-			<item value="cows"/>
-			<item value="boot"/>
-			<item value="min"/>
-			<item value="harr[getParentInd(curind)]"/>
+			<item value="310"/>
+			<item value="Integer"/>
+			<item value="int"/>
+			<item value="cowReq"/>
+			<item value="Int"/>
+			<item value="R-10"/>
+			<item value="long"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
@@ -47,6 +47,6 @@
 		<item value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont" key="DIALOG_FONT_NAME"/>
 		<item value="409" key="DIALOG_HEIGHT"/>
 		<item value="0" key="DIALOG_X_ORIGIN"/>
-		<item value="241" key="DIALOG_Y_ORIGIN"/>
+		<item value="383" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

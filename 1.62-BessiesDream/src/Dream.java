@@ -9,7 +9,7 @@ import java.util.*;
  * Grid
  * 
  * 7/16 correct: runtime errors!
- * 12/16 correct: fixed some boundary conditions, made sure that initial tile could be orange
+ * 12/16 correct: fixed boundary conditions, made sure that initial tile could be orange
  * what if the first tile is purple? No, the program will work anyway.
  * 
  * what's the problem??
@@ -22,7 +22,8 @@ public class Dream {
 	
 	public static void main(String args[]) throws IOException {
 		// INPUT
-		BufferedReader br = new BufferedReader(new FileReader("dream.in"));
+		//BufferedReader br = new BufferedReader(new FileReader("dream.in"));
+		BufferedReader br = new BufferedReader(new FileReader("testData/12.in"));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		int N = Integer.parseInt(st.nextToken()); // num rows
 		int M = Integer.parseInt(st.nextToken()); // num cols
@@ -55,12 +56,8 @@ public class Dream {
 
 		// BFS
 		State start;
-		if (maze[0][0] == 2) {
-			// if it's an orange tile to start off with, make start orange
-			start = new State(0, 0, 1);
-		} else {
-			start = new State(0, 0, 0);
-		}
+		if (maze[0][0] == 2) start = new State(0, 0, 1); // check for orange
+		else start = new State(0, 0, 0);
 		
 		LinkedList<State> toVisit = new LinkedList<State>();	
 		toVisit.add(start);
@@ -78,13 +75,11 @@ public class Dream {
 				// 3 == blue, can only pass if orange smell
 				// 4 == purple, slide, remove orange smell
 			
-			
-			
 			// go in all 4 directions using dr and dc arrays for tile changes
 			for (int i = 0; i < 4; i++) {
 				
 				// figure out the next state
-				State next = new State(-1, -1, -1); // next state  
+				State next = new State(-1, -1, -1); // shell for next state  
 				
 				int nextRow = cur.row+dr[i];
 				int nextCol = cur.col+dc[i];
@@ -96,17 +91,17 @@ public class Dream {
 				int moves = 1; // normally, move just 1 square
 				
 				if (nextTile == 0) {
-					// red tile, cannot pass, so just do the current
+					// red tile, cannot pass, so no changes
 					next.row = cur.row;
 					next.col = cur.col;
 					next.orange = cur.orange;
 				} else if (nextTile == 1) {
-					// pink tile, normal
+					// pink tile, normal move, no change in orange
 					next.row = nextRow;
 					next.col = nextCol;
-					next.orange = cur.orange; // no change
+					next.orange = cur.orange;
 				} else if (nextTile == 2) {
-					// orange tile, do orange smell
+					// orange tile, normal movem do orange smell
 					next.row = nextRow;
 					next.col = nextCol;
 					next.orange = 1; // orange smell
@@ -117,13 +112,13 @@ public class Dream {
 						next.col = nextCol;
 						next.orange = cur.orange; // no change
 					} else {
-						// else, don't
+						// else, you can't
 						next.row = cur.row;
 						next.col = cur.col;
 						next.orange = cur.orange;
 					}
 				} else if (nextTile == 4) { // purple tile, will cause sliding!
-					// find the first tile in this direction that is non-purple 
+					// find the first non-purple tile
 					// OR the first tile in front of an impassible tile
 					
 					moves++;
@@ -175,7 +170,7 @@ public class Dream {
 			}
 			
 		}
-		//System.out.println(Math.max(DP[N-1][M-1][0], DP[N-1][M-1][1]));
+		System.out.println(Math.max(DP[N-1][M-1][0], DP[N-1][M-1][1]));
 		
 		// OUTPUT
 		PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("dream.out")));
