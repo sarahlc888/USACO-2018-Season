@@ -85,9 +85,9 @@ public class JobHunt {
 				}
 			}
 		}
-		/*for (int i = 0; i < C; i++) {
+		for (int i = 0; i < C; i++) {
 			System.out.println(Arrays.toString(mat[i]));
-		}*/
+		}
 		System.out.println(-1*min + D);
 	}
 	public static boolean cycle(int u, int p) {

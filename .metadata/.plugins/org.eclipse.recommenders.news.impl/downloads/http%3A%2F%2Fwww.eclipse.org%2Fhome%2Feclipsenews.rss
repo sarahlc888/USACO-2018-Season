@@ -9,11 +9,27 @@
       <title>eclipse.org</title>
       <link>http://www.eclipse.org</link>
     </image>
-        <item>
+    <item>
+      <title><![CDATA[Take Your Code to the Next Level With Eclipse Photon]]></title>
+      <link><![CDATA[https://blogs.eclipse.org/post/thabang-mashologu/take-your-code-next-level-eclipse-photon]]></link>
+      <description><![CDATA[Join over 4 million active users of the Eclipse IDE and take your coding to the next (quantum) level with Eclipse Photon.]]></description>
+      <pubDate>Thu, 28 June 2018 12:00:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
+      <title><![CDATA[New Photon Release of Eclipse IDE Ships With Full Rust Support]]></title>
+      <link><![CDATA[https://www.eclipse.org/org/press-release/20180627_new-photon-release-of-eclipse-ide-ships-with-full-rust-support.php]]></link>
+      <description><![CDATA[The Eclipse Foundation today announced the Eclipse Photon simultaneous release.]]></description>
+      <pubDate>Wed, 27 June 2018 10:00:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>1</pressrelease>
+    </item>
+    <item>
       <title><![CDATA[Eclipse Newsletter - A First Look at Jakarta EE]]></title>
       <link><![CDATA[https://www.eclipse.org/community/eclipse_newsletter/2018/may/]]></link>
       <description><![CDATA[This month, read eight great pieces to get informed about various parts of Jakarta EE.]]></description>
-      <pubDate>Mon, 04 June 2018 5:40:00 EST</pubDate>
+      <pubDate>Mon, 04 June 2018 05:40:00 EST</pubDate>
       <category>news</category>
       <pressrelease>0</pressrelease>
     </item>

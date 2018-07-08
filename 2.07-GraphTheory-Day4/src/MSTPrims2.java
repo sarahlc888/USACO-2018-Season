@@ -82,6 +82,7 @@ public class MSTPrims2 {
 					minID = id;
 				}
 			}
+			// TODO: check if there are no edges
 			
 			// move the vertex from v to s
 			s.add(minID); 

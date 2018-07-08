@@ -2,35 +2,37 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="pool: 2 loss: 1 i: 1 s:" key="selection"/>
+		<item value="//System.out" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="pool: 2 loss: 1 i: 1 s:"/>
 			<item value="System.out"/>
-			<item value="DP1"/>
-			<item value="pts"/>
-			<item value="pos"/>
-			<item value="269"/>
-			<item value="//System"/>
-			<item value="suffmax"/>
-			<item value="suffmax: 0"/>
-			<item value="285"/>
-			<item value="285&apos;"/>
-			<item value="269285285"/>
-			<item value="269285"/>
-			<item value="allVisited"/>
-			<item value="2 4  2 1"/>
+			<item value="pre"/>
+			<item value="area"/>
+			<item value="ABCB"/>
+			<item value="System.out.print"/>
+			<item value="print"/>
+			<item value="system"/>
+			<item value="ABCBCD"/>
+			<item value="*"/>
+			<item value="size"/>
+			<item value="Set"/>
+			<item value="set"/>
+			<item value="types"/>
+			<item value="works"/>
+			<item value="Integer.min"/>
 		</list>
 		<list key="replacehistory">
 			<item value="//System.out"/>
+			<item value="suff"/>
+			<item value="//System.out.print"/>
+			<item value="System.out"/>
+			<item value="System"/>
 			<item value="DP2"/>
 			<item value="pts2"/>
 			<item value="pos2"/>
-			<item value="System"/>
-			<item value="System.out"/>
 			<item value="//Sys"/>
 			<item value="Sys"/>
 			<item value="310"/>
@@ -38,8 +40,6 @@
 			<item value="int"/>
 			<item value="cowReq"/>
 			<item value="Int"/>
-			<item value="R-10"/>
-			<item value="long"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
@@ -47,6 +47,6 @@
 		<item value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont" key="DIALOG_FONT_NAME"/>
 		<item value="409" key="DIALOG_HEIGHT"/>
 		<item value="0" key="DIALOG_X_ORIGIN"/>
-		<item value="383" key="DIALOG_Y_ORIGIN"/>
+		<item value="380" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
