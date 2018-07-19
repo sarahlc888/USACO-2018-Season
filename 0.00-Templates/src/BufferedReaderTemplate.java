@@ -25,6 +25,23 @@ public class BufferedReaderTemplate {
 		pw.println();
 		pw.close();
 	}
+	public static class Pair implements Comparable<Pair> {
+		int x;
+		int y;
+
+		public Pair(int a, int b) {
+			x = a;
+			y = b;
+		}
+		@Override
+		public int compareTo(Pair o) { // sort by x, then y
+			if (x == o.x) return y-o.y;
+			return o.x-x;
+		}
+		public String toString() {
+			return x + " " + y;
+		}
+	}
 
 
 }

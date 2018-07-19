@@ -10,9 +10,33 @@
       <link>http://www.eclipse.org</link>
     </image>
     <item>
+      <title><![CDATA[Call for submissions for EclipseCon Europe 2018]]></title>
+      <link><![CDATA[https://www.eclipsecon.org/europe2018]]></link>
+      <description><![CDATA[Be part of the EclipseCon Europe program. Submit your talks by July 16th.]]></description>
+      <pubDate>Fri, 06 Jul 2018 10:00:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+     <item>
+      <title><![CDATA[Eclipse Foundation Annual Community Report]]></title>
+      <link><![CDATA[https://www.eclipse.org/org/foundation/reports/2018_annual_report.php]]></link>
+      <description><![CDATA[The Eclipse Foundation's 2018 Annual Community Report has been published, and is now available.]]></description>
+      <pubDate>Tue, 03 Jul 2018 15:00:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
+      <title><![CDATA[Eclipse Newsletter | Eclipse Photon]]></title>
+      <link><![CDATA[https://www.eclipse.org/community/eclipse_newsletter/2018/june/]]></link>
+      <description><![CDATA[Naturally, this issue of the newsletter features some of the things that are new in Eclipse Photon!]]></description>
+      <pubDate>Tue, 03 Jul 2018 12:00:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
       <title><![CDATA[Take Your Code to the Next Level With Eclipse Photon]]></title>
       <link><![CDATA[https://blogs.eclipse.org/post/thabang-mashologu/take-your-code-next-level-eclipse-photon]]></link>
-      <description><![CDATA[Join over 4 million active users of the Eclipse IDE and take your coding to the next (quantum) level with Eclipse Photon.]]></description>
+      <description><![CDATA[Join over 4 million active users of the Eclipse IDE and take your coding to the next level with Eclipse Photon.]]></description>
       <pubDate>Thu, 28 June 2018 12:00:00 EST</pubDate>
       <category>news</category>
       <pressrelease>0</pressrelease>
