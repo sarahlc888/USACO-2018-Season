@@ -2,10 +2,10 @@ import java.io.*;
 import java.util.*;
 /*
  * from 7/17 lesson and notes
- * currently works on just a plain square... lots to do still
- * changed so that it counts the borders... need to subtract off to account for that
+ * added functionality for kites and trapezoids
+ * doesn't work on things with horizontal edges that also have points on that line to be counted
  */
-public class Sweepline {
+public class Sweepline2 {
 	static Line[] edges;
 	public static void main(String args[]) throws IOException {
 		// INPUT
@@ -14,6 +14,10 @@ public class Sweepline {
 		Pair[] corners = new Pair[N]; // corners in cw or ccw order
 		int minY = Integer.MAX_VALUE;
 		int maxY = 0;
+		
+		// map corner to the indices of edges
+		TreeMap<Pair, int[]> cornerToEdge = new TreeMap<Pair, int[]>();
+				
 		for (int i = 0; i < N; i++) { 
 			StringTokenizer st = new StringTokenizer(br.readLine());
 			int x = Integer.parseInt(st.nextToken());
@@ -21,6 +25,9 @@ public class Sweepline {
 			corners[i] = new Pair(x, y);
 			minY = Math.min(minY, y);
 			maxY = Math.max(maxY, y);
+			cornerToEdge.put(corners[i], new int[2]);
+			cornerToEdge.get(corners[i])[0] = -1;
+			cornerToEdge.get(corners[i])[1] = -1;
 		}
 		edges = new Line[N]; // edges of the polygon
 		for (int i = 0; i < N; i++) { // corner with lower y coord first
@@ -34,77 +41,132 @@ public class Sweepline {
 		
 		Arrays.sort(edges); // sort by p1.y then p2.y, lo to hi
 		
+		for (int i = 0; i < N; i++) { // map corners to edges
+			Line e = edges[i];
+			Pair c1 = new Pair(e.p1.x, e.p1.y);
+			Pair c2 = new Pair(e.p2.x, e.p2.y);
+			
+			if (cornerToEdge.get(c1)[0] == -1) {
+				cornerToEdge.get(c1)[0] = i;
+			} else {
+				cornerToEdge.get(c1)[1] = i;
+			}
+			if (cornerToEdge.get(c2)[0] == -1) {
+				cornerToEdge.get(c2)[0] = i;
+			} else {
+				cornerToEdge.get(c2)[1] = i;
+			}
+		}
+		
 		System.out.println(Arrays.toString(corners));
 		System.out.println(Arrays.toString(edges));
 		
-		
-
 		// numbers to indicate place in the list of edges, update using bsearch
 		int minActive = 0;
 		int maxActive = N-1;
 		
-		// LOOP THROUGH ROWS, lo to hi
+		int onBounds = 0; // number of points on the boundaries
 		int numPoints = 0; // number of points inside, excluding points on boundaries
-		for (int y = minY; y <= maxY; y++) { // y value (row)
+		
+		for (int y = minY; y <= maxY; y++) { // LOOP THROUGH ROWS, lo to hi
 			System.out.println("y: " + y);
-			// TODO: CORRECTLY update min and max active edge indices
+			
 			// get the lowest and highest edge that have a lower y val < cur y
-//			maxActive = greatestBelow(y);
-//			minActive = leastAbove(y);
-			// the above part doesn't work...
-			ArrayList<Integer> xvals = new ArrayList<Integer>(); // list of xvals that intersect
-			for (int j = minActive; j <= maxActive; j++) {
+			maxActive = greatestBelow(y);
+			minActive = leastAbove(y);
+
+			ArrayList<Integer> xvals = new ArrayList<Integer>(); // xvals of intersections w/ sweepline
+			for (int j = minActive; j <= maxActive; j++) { // edges
 				Line curEdge = edges[j];
 				
-				if (curEdge.p1.y == y && curEdge.p2.y == y) break; // parallel to an edge
+				// TODO: fix this
+				if (curEdge.p1.y == y && curEdge.p2.y == y) break;
 				
 				if (curEdge.p1.y < y && curEdge.p2.y > y ||
 						curEdge.p1.y <= y && curEdge.p2.y > y ||
 						curEdge.p1.y < y && curEdge.p2.y >= y) { // verify intersection
 					System.out.println("  curEdge: " + curEdge);
-					// find intersection (use xj formula in notes)
+					// find intersection
 					
-					// slope
 					double m = (double)(curEdge.p2.y - curEdge.p1.y) / (double)(curEdge.p2.x - curEdge.p1.x);
-					// difference in y (from cur.y to corner.y)
-					int dy = y-curEdge.p1.y; 
+					int dy = y-curEdge.p1.y; // difference in y (from cur.y to corner.y)
+					double newx = (curEdge.p1.x + (double)dy/(double)m); // xval of intersection
+//					System.out.println("    m: " + m);
+//					System.out.println("    dy: " + dy);
+//					System.out.println("    newx: " + newx);
+					int nnewx = (int) newx; // truncated
+					System.out.println("    nnewx: " + nnewx);
 					
-					
-					double newx = (curEdge.p1.x + (double)dy/(double)m);
-					System.out.println("    m: " + m);
-					System.out.println("    dy: " + dy);
-					System.out.println("    newx: " + newx);
-					
-					int nnewx = (int) newx;
-					System.out.println("    newx: " + nnewx);
-					
-					// TODO: count if the points are on the edge
+					// count if the points are on the edge
+					if (newx == nnewx && !xvals.contains(nnewx)) {
+						// if on the bounds and not already counted (cuz of corners)
+						onBounds++; // count it
+						System.out.println("ON bounds: " + onBounds);
+					}
 					xvals.add(nnewx);
-					
-//					System.out.println(newx > nnewx);
-					
 				}
+				
 			}
+			
+			
 			Collections.sort(xvals);
-			// TODO: account for corners by adding it again in xval list or not
+			
+			// account for corners (regulate how many copies in xvals)
 			int ind = 0;
 			while (ind+1 < xvals.size()) {
 				int cur = xvals.get(ind);
 				int next = xvals.get(ind+1);
 				if (cur == next) {
+					System.out.println("  cur: " + cur + " next: " + next);
 					// it's a corner (added to list twice because intersects two lines)
+					// the edges that intersect at the corner
+					int[] inters = cornerToEdge.get(new Pair(cur, y));
+					
+					Line l1 = edges[inters[0]];
+					Line l2 = edges[inters[1]];
+					
+					System.out.println("    lines: " + l1 + "   " + l2);
+					
+					int y1 = l1.p1.y;
+					if (y1 == y) y1 = l1.p2.y;
+					int y2 = l2.p1.y;
+					if (y2 == y) y2 = l2.p2.y;
+	
+					System.out.println("    ys: " + y1 + "   " + y2);
+					
+					// check what side of the sweep line they are on
+					int d1 = map(y-y1);
+					int d2 = map(y-y2);
+					
+					if (d1 == d2) {
+						// both above or below cur yn(keep two copies)
+						System.out.println("    out");
+						// if not incrementing, then remove
+//						xvals.remove(ind);
+//						xvals.remove(ind);
+						ind++; // if not removing, then increment
+					} else {
+						// get rid of one copy because the sweep line enteres the shape
+						System.out.println("    in");
+						xvals.remove(ind);
+						// don't increment
+					}
+					continue;
 				}
+				ind++;
 			}
+//			System.out.println(xvals);
 			// increment numpoints
 			ind = 0;
 			while (ind+1 < xvals.size()) {
-				// include the actual vals, will subtract off points on the edge later (TODO)
+				// include the actual vals on lines
 				numPoints += xvals.get(ind+1) - xvals.get(ind) + 1;
 				ind += 2;
 			}
 			System.out.println("  num points: " + numPoints);
 		}
-		
+		// subtract off all points on the boundaries
+		numPoints -= onBounds;
 		System.out.println(numPoints);
 
 		PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("fill.out")));
@@ -112,7 +174,13 @@ public class Sweepline {
 		pw.println(numPoints);
 		pw.close();
 	}
-	// TODO: make sure the bsearch functions work and do what they're supposed to do
+	public static int map(int n) {
+		// returns -1 if n < 0; 0 if n == 0; 1 if n > 0
+		if (n < 0) return -1;
+		if (n > 0) return 1;
+		return 0;
+	}
+	// get the lowest and highest edge that have a lower y val <= cur y
 	public static int greatestBelow(long val) {
 		// returns greatest i so that edges[i].p1.y <= val
 		// returns greatest i <= val
@@ -123,7 +191,7 @@ public class Sweepline {
 		while (lo < hi) {
 			int mid = (lo + hi + 1)/2; // +1 so lo can become hi in 1st if
 			
-			if (edges[mid].p2.y <= val) { // if mid is in range, increase
+			if (edges[mid].p1.y <= val) { // if mid is in range, increase
 				lo = mid;
 			} else { // mid is not in range, decrease
 				hi = mid - 1;
@@ -133,7 +201,7 @@ public class Sweepline {
 		
 	}
 	public static int leastAbove(long val) {
-		// returns smallest i so that edges[i].p2.y >= val
+		// returns smallest i so that edges[i].p1.y <= val
 		// returns smallest i >= val
 		int lo = 0;
 		int hi = edges.length-1;
@@ -141,7 +209,7 @@ public class Sweepline {
 		while (lo < hi) {
 			int mid = (lo + hi)/2; // no +1 because you want hi to become lo in 1st if
 
-			if (edges[mid].p2.y >= val) { // if mid is in range
+			if (edges[mid].p1.y <= val) { // if mid is in range
 				hi = mid;
 			} else { // mid is not in range
 				lo = mid + 1;
