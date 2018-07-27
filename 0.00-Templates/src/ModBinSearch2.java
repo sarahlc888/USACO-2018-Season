@@ -1,5 +1,8 @@
 import java.io.IOException;
-
+/*
+ * freshly modified 7/25/18, not fully tested, but should work
+ * just added the catch statements to return -1
+ */
 public class ModBinSearch2 {
 	
 	public static void main(String args[]) throws IOException {
@@ -22,8 +25,8 @@ public class ModBinSearch2 {
 				hi = mid - 1;
 			}
 		}
-		return hi;
-		
+		if (arr[hi] <= val) return hi;
+		return -1;
 	}
 	public static int leastAbove(int[] arr, long val) {
 		// returns smallest i >= val
@@ -40,7 +43,8 @@ public class ModBinSearch2 {
 				lo = mid + 1;
 			}
 		}
-		return lo;
+		if (arr[lo] >= val) return lo; // make sure lo works (catches rare exceptions)
+		return -1;
 	}
 	
 }

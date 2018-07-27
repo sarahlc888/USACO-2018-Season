@@ -10,23 +10,14 @@ public class AllTopoSorts {
 	static class GraphAllTopSorts{
 
 		int V; // No. of vertices
-
 		LinkedList<Integer>[] adj; //Adjacency List
-
 		boolean[] marked; //Boolean array to store the visited nodes
-
 		List<Integer> list;
-
 		int[] indegree; //integer array to store the indegree of nodes
-
-
-
-		//Constructor
 
 		public GraphAllTopSorts(int v) {
 
 			this.V=v;
-
 			this.adj = new LinkedList[v];
 
 			for (int i=0;i<v;i++) {
@@ -126,10 +117,6 @@ public class AllTopoSorts {
 			}
 
 		}
-
-
-
-		
 	}
 	
 	// Driver program to test above functions

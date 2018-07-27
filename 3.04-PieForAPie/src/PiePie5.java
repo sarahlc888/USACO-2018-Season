@@ -5,6 +5,8 @@ import java.util.*;
  * USACO 2017 December Contest, Gold 
  * Problem 1. A Pie for a Pie
  * 
+ * 7/24 lesson
+ * 
  * 2/10 test cases first try
  * 5/10 second try (45 minutes in)
  * 6/10 test cases when fixing zeros array
@@ -25,7 +27,7 @@ public class PiePie5 {
 		int N = Integer.parseInt(st.nextToken());
 		int D = Integer.parseInt(st.nextToken());
 		
-		LabeledPair[] bpOG = new LabeledPair[N]; // bessie's pies
+		LabeledPair[] bpOG = new LabeledPair[N]; // bessie's pies, keep track of OG ordering
 		Pair[] bp = new Pair[N]; // bessie's pies
 		Pair[] ep = new Pair[N]; // elsie's pies
 		
@@ -57,6 +59,7 @@ public class PiePie5 {
 		Arrays.sort(bpOG, (a, b) -> Integer.compare(a.p.x, b.p.x)); // sort by x (bessie value)
 		Arrays.sort(ep, (a, b) -> Integer.compare(a.y, b.y)); // sort by y (elsie value)
 
+		// count the zeros (have val == 0 from perspective of other cow)
 		for (int i = 0; i < N; i++) {
 //			if (bp[i].x == 0 || bp[i].y == 0) {
 			if (bp[i].y == 0) {
@@ -108,7 +111,7 @@ public class PiePie5 {
 //		System.out.println(adj);
 //		System.out.println(zeros);
 		
-		dij(zeros);
+		dij(zeros); // find distances
 		int[] answers = new int[N];
 		for (int i = 0; i < N; i++) { // put the answers back in the right order
 			answers[bpOG[i].label] = dist[i];
