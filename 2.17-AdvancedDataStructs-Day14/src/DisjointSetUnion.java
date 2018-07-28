@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 /*
- * untested
+ * tested DSU
  */
 public class DisjointSetUnion {
 	static int[] p;
