@@ -26,21 +26,17 @@ import java.util.StringTokenizer;
  * 
  */
 public class SP4 {
-	static long[] P;
-	static int M;
-	static int K;
-	static long mod1;
+	static int mod1 = 1000000007;
 	public static void main(String args[]) throws IOException {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		int N = Integer.parseInt(st.nextToken()); // canvas length
-		M = Integer.parseInt(st.nextToken()); // number of stamps
-		K = Integer.parseInt(st.nextToken()); // stamp width
-		mod1 = 1000000007;
+		int M = Integer.parseInt(st.nextToken()); // number of stamps
+		int K = Integer.parseInt(st.nextToken()); // stamp width
 
 		long[] DP = new long[N+1]; // number of paintings using 1...i w/o k consecutive elements
-		P = new long[N+1]; // p[i] = dp[0]...dp[i];
+		long[] P = new long[N+1]; // p[i] = dp[0]...dp[i];
 
 		long[] power = new long[N+1]; // power[i] = M^i
 		power[1] = M;
