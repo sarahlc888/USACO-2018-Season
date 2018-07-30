@@ -55,7 +55,7 @@ public class BP2 {
 		br.close();
 		
 		
-		// TODO: walk down the tree and fill out a par[]
+		// walk down the tree and fill out a par[]
 		
 		LinkedList<Integer> toVisit = new LinkedList<Integer>();
 		toVisit.add(0); // arbitrary root
