@@ -1,201 +1,21 @@
-200
-bessie 11 2 3 4 7 15 21 31 38 41 70 153
+8
+bessie 3 2 6 8
+folder1 2 3 4
+file1 0
+folder2 1 5
+file2 0
+folder3 1 7
+file3 0
+file4 0
+
+10
+bessie 3 8 9 10
 file1 0
 file2 0
-folder1 8 5 6 8 11 23 35 43 63
-file3 0
-folder2 1 14
-folder3 10 13 18 25 47 52 59 79 94 144 174
-folder4 9 9 16 20 29 36 64 65 80 88
-folder5 4 10 34 57 149
-file4 0
-folder6 5 12 22 27 44 166
 file5 0
 file6 0
-folder7 9 17 19 24 39 60 74 89 108 170
-file7 0
-file8 0
-file9 0
-file10 0
-folder8 6 26 32 50 76 95 139
-folder9 5 51 67 140 161 198
-file11 0
-folder10 4 30 45 69 147
-file12 0
-folder11 5 28 85 113 114 168
-folder12 0
-file13 0
-folder13 4 33 90 91 137
-folder14 0
-folder15 3 58 68 155
-file14 0
-file15 0
-folder16 3 53 62 189
-folder17 6 46 49 54 84 115 181
-folder18 2 37 82
-folder19 5 40 48 61 71 176
-file16 0
-folder20 1 42
-folder21 0
-folder22 4 55 125 148 151
-file17 0
-file18 0
-file19 0
-file20 0
-file21 0
-file22 0
-file23 0
-file24 0
-file25 0
-file26 0
-folder23 1 129
-file27 0
-folder24 3 56 97 152
-folder25 0
-folder26 3 66 83 145
-file28 0
-file29 0
-file30 0
-folder27 1 96
-folder28 2 73 123
-folder29 1 132
-folder30 2 101 180
-file31 0
-file32 0
-file33 0
-folder31 4 78 93 103 167
-file34 0
-file35 0
-folder32 1 75
-file36 0
-folder33 4 81 117 143 156
-folder34 4 72 98 111 146
-file37 0
-folder35 6 106 112 134 158 159 196
-folder36 1 86
-file38 0
-folder37 1 77
-folder38 2 87 184
-folder39 1 130
-folder40 3 105 119 122
-file39 0
-folder41 0
-folder42 1 127
-folder43 0
-file40 0
-folder44 3 92 178 197
-folder45 2 107 131
-file41 0
-folder46 1 102
-file42 0
-folder47 1 193
-folder48 2 126 135
-folder49 1 133
-folder50 1 160
-folder51 1 99
-folder52 3 136 164 194
-folder53 0
-file43 0
-folder54 1 100
-file44 0
-file45 0
-folder55 4 104 109 120 191
-file46 0
-file47 0
-file48 0
-file49 0
-file50 0
-folder56 2 110 116
-file51 0
-file52 0
-file53 0
-folder57 1 118
-folder58 0
-file54 0
-file55 0
-file56 0
-file57 0
-folder59 3 121 128 186
-folder60 0
-folder61 2 124 190
-folder62 0
-file58 0
-file59 0
-folder63 0
-file60 0
-folder64 0
-folder65 2 138 173
-file61 0
-folder66 1 154
-folder67 1 183
-file62 0
-folder68 2 187 200
-folder69 0
-folder70 0
-folder71 3 141 162 165
-folder72 1 157
-file63 0
-folder73 0
-folder74 1 175
-folder75 4 142 150 163 179
-folder76 0
-file64 0
-folder77 0
-folder78 0
-folder79 0
-folder80 0
-file65 0
-file66 0
-file67 0
-file68 0
-folder81 0
-folder82 1 171
-file69 0
-folder83 0
-folder84 2 169 182
-folder85 1 185
-file70 0
-file71 0
-folder86 0
-file72 0
-file73 0
-file74 0
-folder87 2 177 199
-file75 0
-file76 0
-folder88 1 172
-file77 0
-file78 0
-folder89 1 192
-file79 0
-file80 0
-folder90 0
-folder91 1 188
-file81 0
-folder92 0
-file82 0
-file83 0
-folder93 0
-folder94 0
-folder95 0
-file84 0
-file85 0
-folder96 0
-folder97 0
-folder98 0
-folder99 1 195
-file86 0
-folder100 0
-file87 0
-file88 0
-folder101 0
-folder102 0
-folder103 0
-folder104 0
-folder105 0
-folder106 0
-folder107 0
-folder108 0
-file89 0
-file90 0
-folder109 0
+file3 0
+file4 0
+folder3 2 4 5
+folder2 2 6 7
+folder1 2 2 3
