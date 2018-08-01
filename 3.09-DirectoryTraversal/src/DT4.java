@@ -4,13 +4,12 @@ import java.util.*;
  * USACO 2018 February Contest, Gold
  * Problem 2. Directory Traversal
  * 
+ * 7/31 lesson
+ * 
  * dijkstra from FILES (go backward)
  * 3/10
- * 
- * TIMES OUT BECAUSE dijkstra is N and there could be N files you are going from
- * so visited array could be N by N which is too big
  */
-public class DT3 {
+public class DT4 {
 	static int N;
 	static int[] dist;
 	static boolean[][] visited;

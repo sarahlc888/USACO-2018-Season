@@ -12,6 +12,8 @@ import java.util.*;
  * 
  * had to do the DP where the last breakout was exactly at step j
  * not my original idea
+ * 
+ * 7/31 lesson
  */
 public class TamingTheHerd {
 	public static void main(String args[]) throws IOException {
