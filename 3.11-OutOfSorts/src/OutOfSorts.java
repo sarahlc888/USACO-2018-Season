@@ -5,8 +5,6 @@ import java.util.*;
  * Problem 1. Out of Sorts
  * 
  * 3/10 test cases formerly
- * now it doesn't really work at all
- * fix tomorrow...
  */
 public class OutOfSorts {
 	static int[] A;
@@ -63,6 +61,7 @@ public class OutOfSorts {
 //		System.out.println(Arrays.toString(moderated));
 //		System.out.println(Arrays.toString(moves));
 		
+		
 		int maxval = 0;
 		boolean[] seen = new boolean[N];
 		int prev = 0;
@@ -88,7 +87,7 @@ public class OutOfSorts {
 		
 		
 		PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("sort.out")));
-
+		System.out.println(maxval);
 		pw.println(maxval);
 		pw.close();
 	}
