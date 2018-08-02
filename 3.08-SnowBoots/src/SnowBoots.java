@@ -8,7 +8,7 @@ import java.util.*;
  * 4/10 test cases, just like the last attempt in 1.45....
  * 12/12 correct, had to write own linked list instead of using predef!
  * 
- * had to look at answer
+ * had to look at answer, linked list
  */
 
 public class SnowBoots {

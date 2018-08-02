@@ -68,6 +68,9 @@ public class DijkstraAdjList {
 			
 			
 			// check if node is visited
+			// MARK VISITED HERE AFTER POPPING FROM PQ
+			// to make sure that you get the shortest path to that edge
+			// if you marked visited after pushing initially, you could miss a shorter route
 			if (visited[node]) {
 				continue; // if already visited, don't add it
 			} else {
