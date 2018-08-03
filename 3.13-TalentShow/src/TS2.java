@@ -5,6 +5,7 @@ import java.util.*;
  * Problem 3. Talent Show
  * 8/2/18
  * DP but smarter
+ * still too much memory
  */
 public class TS2 {
 	public static void main(String args[]) throws IOException {

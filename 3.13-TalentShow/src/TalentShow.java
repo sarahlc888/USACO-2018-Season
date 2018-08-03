@@ -7,7 +7,7 @@ import java.util.*;
  * DP
  * 
  * knapsack without replacement
- * not that easy...
+ * not working, too much memory
  */
 public class TalentShow {
 	public static void main(String args[]) throws IOException {
