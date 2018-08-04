@@ -1,11 +1,14 @@
 import java.io.*;
 import java.util.*;
-/*
+/* USACO 2014 December Contest, Gold
+ * Problem 1. Guard Mark
+ * 8/3
+ * 
  * DP and bitmask
  * 
  * 14/14 cases
  */
-public class GM1 {
+public class GMFINAL {
 	static int N;
 	public static void main(String args[]) throws IOException {
 
