@@ -1,45 +1,45 @@
 import java.io.*;
 import java.util.*;
-/* USACO 2014 December Contest, Gold
+/* 
+ * USACO 2014 December Contest, Gold
  * Problem 2. Marathon
  * 
- * binary index tree / seg tree 
- * need a sum one and a max one
+ * 8/6-7
+ * 
+ * binary index tree for sums
+ * seg tree for maxes
  * 
  * 10/10 test cases
- * messy imp
  */
 public class Marathon {
 	static Pair[] pts;
 	public static void main(String args[]) throws IOException {
-
+		// input
 		BufferedReader br = new BufferedReader(new FileReader("marathon.in"));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		int N = Integer.parseInt(st.nextToken()); // num checkpoints
 		int Q = Integer.parseInt(st.nextToken()); // num queries
 		pts = new Pair[N]; // (x, y) locations of points
-		int[] d = new int[N]; // distance from last point to cur point
+		int[] d = new int[N]; // d[i] = dist from i-1 to i
 		for (int i = 0; i < N; i++) {
 			st = new StringTokenizer(br.readLine());
 			pts[i] = new Pair(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));
 			if (i != 0) d[i] = dist(i, i-1);
 		}
 		
-//		System.out.println(Arrays.toString(pts));
-//		System.out.println(Arrays.toString(d));
-		
-		BIT b = new BIT(N-1); // BIT to keep track of dists
-		for (int i = 1; i < N; i++) { // init
+		BIT b = new BIT(N-1); // BIT to keep track of distances
+		for (int i = 1; i < N; i++) // init
 			b.update(i, d[i]);
-		}
 		
-		STMax sMax = new STMax(N); // keep track of max dist added by that checkpt
+		// seg tree to track dist added by checkpoint
+		// or alternatively how much dist could decrease if that pt is skipped
+		STMax sMax = new STMax(N); 
 		int[] addedDist = new int[N];
 		for (int i = 1; i < N-1; i++) {
-			int d1 = d[i]; // dist to node from prev node
-			int d2 = d[i+1]; // dist to next node
-			int d3 = dist(i-1, i+1); // dist skipping that node
-			addedDist[i] = d1+d2-d3; // extra dist
+			int d1 = d[i]; // dist(i-1, i)
+			int d2 = d[i+1]; // dist(i, i+1)
+			int d3 = dist(i-1, i+1); // dist when you skip the node
+			addedDist[i] = d1+d2-d3; // calc "extra" dist
 		}
 		sMax.buildtree(addedDist);
 				
@@ -49,17 +49,14 @@ public class Marathon {
 			st = new StringTokenizer(br.readLine());
 			String type = st.nextToken(); 
 			if (type.equals("Q")) { // query
-				int start = Integer.parseInt(st.nextToken())-1;
-				int end = Integer.parseInt(st.nextToken())-1;
-//				System.out.println("start: " + start + " end: " + end);
+				int start = Integer.parseInt(st.nextToken())-1; // adjust indexing
+				int end = Integer.parseInt(st.nextToken())-1; // adjust indexing
 				
-				int totDist = b.query(start+1, end); // dist from start to end
-				int maxThere = sMax.maxFrom(start+1, end-1); // can't skip 1st or last
+				int totDist = b.query(start+1, end); // dist from start to end of subroute
+				int maxThere = sMax.maxFrom(start+1, end-1); // can't skip 1st or last pt
 				maxThere = Math.max(0, maxThere);
-//				System.out.println("  tot: " + totDist);
-//				System.out.println("  max: " + maxThere);
-//				System.out.println("  " + (totDist-maxThere));
-				pw.println(totDist-maxThere);
+				// return: total distance - max decrease possible from skipping a pt
+				pw.println(totDist-maxThere); 
 			} else { // update
 				int num = Integer.parseInt(st.nextToken())-1; // adjust indexing
 				int nx = Integer.parseInt(st.nextToken());
@@ -68,32 +65,26 @@ public class Marathon {
 				pts[num].x = nx;
 				pts[num].y = ny;
 				
-				// update BIT (the update func is based off of how much to add)
-				// update dist 
-				if (num != 0) {
+				// update d array and BIT (the update func is based off of how much to add)
+				if (num-1 >= 0) { // bounds
 					b.update(num, dist(num-1, num) - d[num]);
 					d[num] = dist(num-1, num);
 				}
-				if (num+1 < N) { // TODO: fix this condition
+				if (num+1 < N) { // bounds
 					b.update(num+1, dist(num, num+1) - d[num+1]);
 					d[num+1] = dist(num, num+1);
 				}
 				
-				
-//				System.out.println("update: " + Arrays.toString(d));
-				// update seg tree entries for num-1, num, num+1
-				if (num-1 > 0) // if not the first one, edit
+				// update seg tree for num-1, num, num+1
+				if (num-1 > 0) 
 					sMax.setValue(num-1, d[num-1]+d[num]-dist(num-2, num));
-				if (num+1 < N && num-1 >= 0)
+				if (num+1 < N && num-1 >= 0) 
 					sMax.setValue(num, d[num]+d[num+1]-dist(num-1, num+1));
-				if (num+2 < N) // if not last, edit
+				if (num+2 < N) 
 					sMax.setValue(num+1, d[num+1]+d[num+2]-dist(num, num+2));
 			}
 		}
-		
 		br.close();
-
-
 		pw.close();
 	}
 	public static int dist(int i, int j) { // returns dist between pt i and pt j
