@@ -3,11 +3,11 @@ import java.util.*;
 /* USACO 2014 December Contest, Gold
  * Problem 2. Marathon
  * 
- * binary index tree idea
+ * binary index tree / seg tree 
  * need a sum one and a max one
- * but haven't figure out the details yet
  * 
- * 1/10 test cases only... fix tomorrow
+ * 10/10 test cases
+ * messy imp
  */
 public class Marathon {
 	static Pair[] pts;
@@ -52,12 +52,13 @@ public class Marathon {
 				int start = Integer.parseInt(st.nextToken())-1;
 				int end = Integer.parseInt(st.nextToken())-1;
 //				System.out.println("start: " + start + " end: " + end);
-//				System.out.println("  " + Arrays.toString(b.a));
 				
-				int totDist = b.query(start+1, end);
-				int maxThere = sMax.maxFrom(start+1, end);
+				int totDist = b.query(start+1, end); // dist from start to end
+				int maxThere = sMax.maxFrom(start+1, end-1); // can't skip 1st or last
+				maxThere = Math.max(0, maxThere);
 //				System.out.println("  tot: " + totDist);
 //				System.out.println("  max: " + maxThere);
+//				System.out.println("  " + (totDist-maxThere));
 				pw.println(totDist-maxThere);
 			} else { // update
 				int num = Integer.parseInt(st.nextToken())-1; // adjust indexing
@@ -68,17 +69,24 @@ public class Marathon {
 				pts[num].y = ny;
 				
 				// update BIT (the update func is based off of how much to add)
-				b.update(num, dist(num-1, num) - d[num]);
-				b.update(num+1, dist(num, num+1) - d[num+1]);
 				// update dist 
-				d[num] = dist(num-1, num);
-				d[num+1] = dist(num, num+1);
+				if (num != 0) {
+					b.update(num, dist(num-1, num) - d[num]);
+					d[num] = dist(num-1, num);
+				}
+				if (num+1 < N) { // TODO: fix this condition
+					b.update(num+1, dist(num, num+1) - d[num+1]);
+					d[num+1] = dist(num, num+1);
+				}
+				
+				
 //				System.out.println("update: " + Arrays.toString(d));
 				// update seg tree entries for num-1, num, num+1
-				if (num-1 > 0)
+				if (num-1 > 0) // if not the first one, edit
 					sMax.setValue(num-1, d[num-1]+d[num]-dist(num-2, num));
-				sMax.setValue(num, d[num]+d[num+1]-dist(num-1, num+1));
-				if (num+1 < N-1)
+				if (num+1 < N && num-1 >= 0)
+					sMax.setValue(num, d[num]+d[num+1]-dist(num-1, num+1));
+				if (num+2 < N) // if not last, edit
 					sMax.setValue(num+1, d[num+1]+d[num+2]-dist(num, num+2));
 			}
 		}
@@ -88,8 +96,7 @@ public class Marathon {
 
 		pw.close();
 	}
-	public static int dist(int i, int j) {
-		// returns dist between pt i and pt j
+	public static int dist(int i, int j) { // returns dist between pt i and pt j
 		return Math.abs(pts[i].x-pts[j].x) + Math.abs(pts[i].y-pts[j].y);
 	}
 	public static class BIT { // 1...N indexing required here but it's automatic
