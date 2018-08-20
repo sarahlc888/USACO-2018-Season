@@ -1,26 +1,21 @@
 import java.io.*;
 import java.util.*;
 /*
- * uses Tarjans from 3.20
+ * GC2 except using Kosarajus from 3.20 instead of tarjans
  * 
- * had to look at solution but got pretty close on my own
- * 
- * create a DAG by making graph out of all the strongly connected components
- * loop through all edges, b-->a, find longest path from 1 to a and longest path from b to 1
- * compute length
- * 
- * 14/14 test cases, fixed time out by using a treeset in adj2
+ * 14/14
  */
-public class GC2 {
+public class KosarajusGC {
 	static int N;
-	static ArrayList<ArrayList<Integer>> adj = new ArrayList<ArrayList<Integer>>();
-	static ArrayList<TreeSet<Integer>> adj2 = new ArrayList<TreeSet<Integer>>(); // for scc graph
+	static ArrayList<ArrayList<Integer>> adj = new ArrayList<ArrayList<Integer>>(); // og graph
+	static ArrayList<ArrayList<Integer>> adj1 = new ArrayList<ArrayList<Integer>>(); // transpose og graph 
+	static ArrayList<TreeSet<Integer>> adj2 = new ArrayList<TreeSet<Integer>>(); // scc graph
 	static ArrayList<ArrayList<Integer>> adj3 = new ArrayList<ArrayList<Integer>>(); // reverse scc graph
-	static int[] id;
-	static int curid;
-	static int[] low;
-	static boolean[] onStack;
-	static Stack<Integer> s = new Stack<Integer>();
+	
+	// for kosarajus 2 pass
+	static boolean[] visited; 
+	static Stack<Integer> kosa = new Stack<Integer>(); 
+	static int curSize;
 	static int sccCount = 0;
 	static ArrayList<Integer> sccSize = new ArrayList<Integer>();
 	static int[] sccMap;
@@ -36,14 +31,13 @@ public class GC2 {
 		N = Integer.parseInt(st.nextToken()); // nodes
 		int M = Integer.parseInt(st.nextToken()); // edges
 		
-		// init graph and tarjan's stuff
-		id = new int[N]; // "discovery array" for labelling after initial DFS
-		low = new int[N]; // low[i] = lowest id val of any node reachable from node i
-		onStack = new boolean[N]; // if currently under consideration (visited but not put in a cc yet)
+		// init graph and KOSA stuff
+		visited = new boolean[N]; // for dfs
 		sccMap = new int[N]; // sccMap[i] = scc of node i
 		for (int i = 0; i < N; i++) {
 			adj.add(new ArrayList<Integer>());
-			id[i] = sccMap[i] = -1;
+			adj1.add(new ArrayList<Integer>());
+			sccMap[i] = -1;
 		}
 		
 		for (int i = 0; i < M; i++) { // scan everything in, adjust indexing
@@ -51,15 +45,31 @@ public class GC2 {
 			int a = Integer.parseInt(st.nextToken()) - 1; 
 			int b = Integer.parseInt(st.nextToken()) - 1;
 			adj.get(a).add(b);
+			adj1.get(b).add(a);
 		}
 		br.close();
 		
-		// DFS and tarjans
+		// DFS and KOSA
 		for (int i = 0; i < N; i++) { // loop through all nodes
-			if (id[i] == -1) { // if unvisited, DFS
+			if (!visited[i]) {
 				dfs(i);
 			}
 		}
+		
+		visited = new boolean[N]; // reset for dfs round 2
+		
+		while (!kosa.isEmpty()) { // pop off the stack
+			int next = kosa.pop();
+//			System.out.println("next: " + next);
+
+			if (!visited[next]) {
+				curSize = 0;
+				dfs2(next);
+				sccSize.add(curSize);
+				sccCount++;
+			}
+		}
+		
 		
 		// BUILD A NEW GRAPH OUT OF SCCS (now it will be a DAG)
 		for (int i = 0; i < sccCount; i++) {
@@ -141,43 +151,36 @@ public class GC2 {
 		
 		return mdist2[u];
 	}
-	public static void dfs(int u) { // node u
-		id[u] = low[u] = ++curid; // mark id
-		onStack[u] = true; // mark "opened" / "active"
-		s.add(u);
-		
+	public static void dfs(int u) { // dfs from node u
+		visited[u] = true;
 		for (int i = 0; i < adj.get(u).size(); i++) { // neighbors
 			int next = adj.get(u).get(i); 
 			
-			if (id[next] == -1) { // if not visited
+			if (!visited[next]) { // if not visited
 				dfs(next);
-			}
-			if (onStack[next]) { 
-				// if the child has been "opened" but not been put in a cc yet ("closed")
-				low[u] = Math.min(low[u], low[next]);
+				visited[next] = true;
 			}
 		}
+		kosa.push(u); // push onto the stack after dfs finishes ("highest" nodes on top)
 		
-		if (low[u] == id[u]) { // found a cc
-			int num = 0;
-			
-			// empty cc components from the stack
-			while (!s.isEmpty()) { 
-				int x = s.pop();
-				onStack[x] = false;
-				low[x] = id[u]; // mark as part of the cc
-				num++;
-				sccMap[x] = sccCount;
-				if (x == 0) { // source
-					SOURCE = sccCount;
-				}
-				if (x == u) {
-					break; // stop when you get back to the "head" of the cc
-				}
+	}
+	public static void dfs2(int u) { // dfs from node u
+		visited[u] = true;
+		
+//		System.out.println("  u: " + u);
+		
+		for (int i = 0; i < adj1.get(u).size(); i++) { // neighbors
+			int next = adj1.get(u).get(i); 
+			if (!visited[next]) { // if not visited
+//				System.out.println("    next: " + next);
+
+				dfs2(next);
+				visited[next] = true;
 			}
-			sccSize.add(num);
-			sccCount++;
 		}
+		sccMap[u] = sccCount; // add to scc
+		curSize++;
+		if (u == 0) SOURCE = sccCount; // assign source
 	}
 }
 
