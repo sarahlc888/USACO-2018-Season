@@ -6,7 +6,7 @@ import java.util.*;
  * O(VE)
  * reference: https://www.geeksforgeeks.org/bellman-ford-algorithm-dp-23/
  * 
- * untested
+ * minimal testing
  */
 public class BellmanFord {
 	static ArrayList<ArrayList<Pair>> adj = new ArrayList<ArrayList<Pair>>(); // graph
@@ -16,19 +16,23 @@ public class BellmanFord {
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		int N = Integer.parseInt(st.nextToken()); // nodes
 		int M = Integer.parseInt(st.nextToken()); // edges
-		int K = Integer.parseInt(st.nextToken())-1; // source
-		for (int i = 0; i < M; i++) { // scan edges in, adjust indexing
-			st = new StringTokenizer(br.readLine());
-			int a = Integer.parseInt(st.nextToken()) - 1; 
-			int b = Integer.parseInt(st.nextToken()) - 1;
-			int c = Integer.parseInt(st.nextToken());
-			adj.get(a).add(new Pair(b, c));
-		}
+		int K = Integer.parseInt(st.nextToken()); // source
+		
 		dist = new int[N];
 		for (int i = 0; i < N; i++) {
 			dist[i] = Integer.MAX_VALUE; // init all nodes as unreachable
+			adj.add(new ArrayList<Pair>());
 		}
 		dist[K] = 0; // except the source
+		
+		for (int i = 0; i < M; i++) { // scan edges in
+			st = new StringTokenizer(br.readLine());
+			int a = Integer.parseInt(st.nextToken()); 
+			int b = Integer.parseInt(st.nextToken());
+			int c = Integer.parseInt(st.nextToken());
+			adj.get(a).add(new Pair(b, c));
+		}
+		
 		
 		// loop through and calc dists
 		for (int i = 0; i < N-1; i++) { // N-1 edges is longest possible path
@@ -59,7 +63,7 @@ public class BellmanFord {
 				}
 			}
 		}
-		
+		System.out.println(Arrays.toString(dist));
 	}
 	public static class Pair implements Comparable<Pair> {
 		int dest;
