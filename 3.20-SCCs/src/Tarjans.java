@@ -3,7 +3,7 @@ import java.util.*;
 /*
  * finds sccs from a directed cyclic graph
  * not fully tested but theoretically works (used in 3.21 properly)
- * O(V+E)
+ * O(V+E) from DFSing
  */
 public class Tarjans {
 	static int N;

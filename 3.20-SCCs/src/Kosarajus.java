@@ -3,6 +3,7 @@ import java.util.*;
 /*
  * kosaraju's 2 pass algo to find sccs in 2 dfs
  * not fully tested, should be working, used in 3.21 for full points
+ * O(V+E) from DFSing
  */
 public class Kosarajus {
 	static ArrayList<ArrayList<Integer>> adj = new ArrayList<ArrayList<Integer>>(); // graph
