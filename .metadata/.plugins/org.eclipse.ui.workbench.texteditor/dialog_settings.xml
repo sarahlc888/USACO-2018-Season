@@ -2,12 +2,16 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="382" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="SOURCE: "/>
+			<item value="(&quot;SOURCE"/>
+			<item value="12"/>
+			<item value="while"/>
 			<item value="382"/>
 			<item value="Integer"/>
 			<item value="intInteger"/>
@@ -19,10 +23,6 @@
 			<item value="[0, 0, 0, 0, 0, 0, 0, 0, 0]=1"/>
 			<item value="[0, 0, 0, 0, 0, 0, 0, 0, 0]="/>
 			<item value="0, 1, 1, 1, 1, 1, 1, 0, 0"/>
-			<item value="val: -10019"/>
-			<item value="-10019"/>
-			<item value="1, 1, 1, 1, 1, 1, 0, 0"/>
-			<item value="1, 1, 1, 1, 1, 1, 0"/>
 		</list>
 		<list key="replacehistory">
 			<item value="//System.out"/>

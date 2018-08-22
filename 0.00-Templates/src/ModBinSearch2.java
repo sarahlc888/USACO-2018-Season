@@ -7,7 +7,8 @@ public class ModBinSearch2 {
 	
 	public static void main(String args[]) throws IOException {
 		int[] arr1 = {1, 2, 6, 8};
-		System.out.println(bSearch(arr1, 80));
+//		System.out.println(bSearch(arr1, 80));
+		System.out.println(greatestBelow(arr1, 2));
 	}
 	public static int greatestBelow(int[] arr, long val) {
 		// returns greatest i <= val
