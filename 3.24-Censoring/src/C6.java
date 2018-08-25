@@ -1,14 +1,18 @@
 import java.io.*;
 import java.util.*;
-
 /*
  * USACO 2015 February Contest, Gold
  * Problem 2. Censoring (Gold)
  * 8/23
  * 
  * 8/15 correct
+ * attempt to reduce recalculation by storing old versions of toVisit
+ * added bsearch in the main loop
+ * a bit faster...
+ * 
+ * stop deleting stuff and just build the string up from the ground
  */
-public class C2 {
+public class C6 {
 	static ArrayList<ArrayList<Integer>> adj;
 	static char[] nodes;
 	public static void main(String args[]) throws IOException {
@@ -25,74 +29,62 @@ public class C2 {
 			totLen += C[i].length();
 		}
 		br.close();
-
 		Arrays.sort(C);
-		
-		//System.out.println(S);
-		//System.out.println(Arrays.toString(C));
-		
 
 		// Tree
 		adj = new ArrayList<ArrayList<Integer>>();
 		for (int i = 0; i < totLen; i++) 
 			adj.add(new ArrayList<Integer>()); // init
 		nodes = new char[totLen]; // nodes[i] = character
-		int source = 0; // first node
 		
-		int id = 1; // cur id
+		int id = 1; // cur id (root node is 0, reserved)
 		
 		for (int i = 0; i < N; i++) { // loop through  words
 			String w = C[i];
-			// index 0...ind of w exist in the tree
-			int ind = existsUpTo(w); 
-			String sub = w.substring(0, ind+1);
-			// in the tree, end of where w sub, where to start adding
-			int stub = exists(sub); 
 			
-//			System.out.println("word: " + w);
-//			System.out.println("  ind: " + ind);
-//			System.out.println("  stub: " + stub);
+			int ind = existsUpTo(w); // index 0...ind of w exist in the tree
+			String sub = w.substring(0, ind+1);
+			int stub = exists(sub); // the end of sub in the tree, where to start adding
 			
 			for (int j = ind+1; j < w.length(); j++) {
 				char cur = w.charAt(j);
-//				//System.out.println("    cur: " + cur + " stub: " + stub);
 				nodes[id] = cur; // create node
-				
-//				System.out.println(adj.get(stub) + "  " + cur);
-//				if (adj.get(stub).size() > 0) System.out.println(nodes[adj.get(stub).get(0)]);
 				
 				int addind = leastAbove(adj.get(stub), nodes[id]);
 				adj.get(stub).add(addind, id); // add to tree
 				stub = id; // update stub
 				id++;
 			}
-//			System.out.println("adj: " + adj);
-//			System.out.println("nodes: " + Arrays.toString(nodes));
 		}
 
-		//System.out.println("adj: " + adj);
-		//System.out.println("nodes: " + Arrays.toString(nodes));
-		
-		
 		// nodes to visit
 		LinkedList<State> toVisit = new LinkedList<State>();
 		LinkedList<State> toVisit2;
+		// history
+		HashMap<Integer, LinkedList<State>> prevs = new HashMap<Integer, LinkedList<State>>();
+
+//		String ret = ""; // string to return
+//		ret += S.charAt(0);
 		
-		int i = 0;
+		int i = 0; // index in ret
 		while (i < S.length()) { // loop through S
-			
-			toVisit2 = new LinkedList<State>(); // next round of toVisit
 			char nextChar = S.charAt(i); // char to look for
 			
-			//System.out.println("i: " + i + " nextchar: " + nextChar);
+//			System.out.println("i: " + i + " char: " + nextChar);
+//			
+			LinkedList<State> toVisitCopy = new LinkedList<State>(); // copy of toVisit
+			toVisit2 = new LinkedList<State>(); // next round of toVisit
 			
-			int wordStart = -1;
+			int wordStart = -1; // start of the word that was found, -1 if N/A
 			
 			while (!toVisit.isEmpty()) { // loop through prev states
 				State ns = toVisit.removeFirst(); // stepping off point
+				toVisitCopy.add(ns);
 				int nodeID = ns.nodeID;
+	
+//				System.out.println("  nodeID: " + nodeID + " start: " + ns.start);
 				
-
+				
 				int ind = bSearch(adj.get(nodeID), nextChar); // look for next char
 				
 				if (ind != -1) {
@@ -109,7 +101,6 @@ public class C2 {
 				}
 				
 				if (wordStart != -1) break;
-
 			}
 			
 			if (wordStart == -1) {
@@ -132,20 +123,20 @@ public class C2 {
 			
 			if (wordStart == -1) {
 				toVisit = toVisit2;
+				
+				prevs.put(i, toVisitCopy);
+				
 				i++;
-			} else { // if found word
-				i = wordStart-longest+1;
+				
+			} else { // found a word!
+				i = wordStart-1; // move the pointer back
 				i = Math.max(0, i);
-				//System.out.println("new i: " + i);
-				toVisit = new LinkedList<State>(); // next round of toVisit
+				toVisit = prevs.get(i); // set toVisit
 			}
-			
-			
 		}
 		
 		
-		//System.out.println(Arrays.toString(remove));
-		
+//		System.out.println(ret);
 //		System.out.println(S);
 		PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("censor.out")));
 

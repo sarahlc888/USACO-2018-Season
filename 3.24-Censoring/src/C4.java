@@ -6,9 +6,12 @@ import java.util.*;
  * Problem 2. Censoring (Gold)
  * 8/23
  * 
- * 8/15 correct
+ * formerly 8/15 correct
+ * DROPPED, NOW ONLY 5/15!?
+ * 
+ * up to 6 with sublist instead of substring
  */
-public class C2 {
+public class C4 {
 	static ArrayList<ArrayList<Integer>> adj;
 	static char[] nodes;
 	public static void main(String args[]) throws IOException {
@@ -78,13 +81,29 @@ public class C2 {
 		LinkedList<State> toVisit = new LinkedList<State>();
 		LinkedList<State> toVisit2;
 		
+		
+		List<Character> ret = new ArrayList<Character>();
+		
 		int i = 0;
-		while (i < S.length()) { // loop through S
+		int i2 = 0; // furthest one visited so far
+		
+		boolean catchUp = false;
+		
+		while (i < S.length() && i2 < S.length()) { // loop through S
+			
+			if (i >= ret.size()) catchUp = false;
+			if (i >= ret.size() && !catchUp) {
+				
+				ret.add( S.charAt(i2) ); // only add if it's the furthest one so far, don't repeat when i goes back on itself
+			}
+			
 			
 			toVisit2 = new LinkedList<State>(); // next round of toVisit
-			char nextChar = S.charAt(i); // char to look for
-			
-			//System.out.println("i: " + i + " nextchar: " + nextChar);
+			char nextChar = ret.get(i); // char to look for
+		
+//			System.out.println("i: " + i + " i2: " + i2 + " nextchar: " + nextChar);
+//			System.out.println("  ret: " + ret);
+//			System.out.println("  catchup: " + catchUp);
 			
 			int wordStart = -1;
 			
@@ -99,9 +118,8 @@ public class C2 {
 					int neighNode = adj.get(nodeID).get(ind);
 					if (adj.get(neighNode).isEmpty()) { // if it's the end of a word		
 											
-						S = S.substring(0, ns.start) + S.substring(i+1);
-						
-//						ret = ret.substring(0, ns.start);
+//						S = S.substring(0, ns.start) + S.substring(i+1);
+						ret = ret.subList(0, ns.start);
 						
 						wordStart = ns.start;
 					}
@@ -120,8 +138,8 @@ public class C2 {
 				if (ind != -1) { // if the character is present
 					int neighNode = adj.get(nodeID).get(ind);
 					if (adj.get(neighNode).isEmpty()) { // if the character is also the end of the word
-						S = S.substring(0, i) + S.substring(i+1);
-						
+//						S = S.substring(0, i) + S.substring(i+1);
+						ret = ret.subList(0, i);
 						wordStart = i;
 					} else {
 						toVisit2.add(new State(neighNode, i));
@@ -130,26 +148,36 @@ public class C2 {
 				}
 			}
 			
+			
 			if (wordStart == -1) {
 				toVisit = toVisit2;
+				
 				i++;
-			} else { // if found word
+				
+ 			} else { // if found word
 				i = wordStart-longest+1;
 				i = Math.max(0, i);
 				//System.out.println("new i: " + i);
 				toVisit = new LinkedList<State>(); // next round of toVisit
+				toVisit2 = new LinkedList<State>(); // next round of toVisit
+				i2++;
+				catchUp = true;
 			}
 			
+			if (!catchUp) i2++;
 			
 		}
 		
 		
 		//System.out.println(Arrays.toString(remove));
 		
+//		System.out.println(ret);
 //		System.out.println(S);
 		PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("censor.out")));
-
-		pw.println(S);
+		for (i = 0; i < ret.size(); i++) {
+			pw.print(ret.get(i));
+//			System.out.print(ret.get(i));
+		}
 		pw.close();
 	}
 	public static int leastAbove(ArrayList<Integer> arr, char val) {
