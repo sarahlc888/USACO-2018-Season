@@ -2,16 +2,19 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="substring" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="substring"/>
+			<item value="while"/>
+			<item value="bits.get(0)"/>
+			<item value="bits.get(0"/>
 			<item value="SOURCE: "/>
 			<item value="(&quot;SOURCE"/>
 			<item value="12"/>
-			<item value="while"/>
 			<item value="382"/>
 			<item value="Integer"/>
 			<item value="intInteger"/>
@@ -20,11 +23,9 @@
 			<item value="111111011"/>
 			<item value="MAX_VALUE"/>
 			<item value="System.out"/>
-			<item value="[0, 0, 0, 0, 0, 0, 0, 0, 0]=1"/>
-			<item value="[0, 0, 0, 0, 0, 0, 0, 0, 0]="/>
-			<item value="0, 1, 1, 1, 1, 1, 1, 0, 0"/>
 		</list>
 		<list key="replacehistory">
+			<item value="gen"/>
 			<item value="//System.out"/>
 			<item value="suff"/>
 			<item value="//System.out.print"/>
@@ -39,7 +40,6 @@
 			<item value="Integer"/>
 			<item value="int"/>
 			<item value="cowReq"/>
-			<item value="Int"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

@@ -8,7 +8,7 @@ import java.util.*;
  * Aho-Corasick algo
  * 
  * copied off of the answer
- * 15/15!!!! got rid of all instances of sublist
+ * 15/15!!!! got rid of sublist(), used a pointer to the "end" of list instead
  */
 public class CTrieFinal3 {
 	
