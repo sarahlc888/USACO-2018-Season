@@ -1,18 +1,15 @@
 import java.io.*;
 import java.util.*;
 /*
+ * from c6
+ * 
  * USACO 2015 February Contest, Gold
  * Problem 2. Censoring (Gold)
  * 8/23
  * 
- * 8/15 correct
- * attempt to reduce recalculation by storing old versions of toVisit
- * added bsearch in the main loop
- * a bit faster...
- * 
- * stop deleting stuff and just build the string up from the ground
+ * 8/15 correct, slightly faster
  */
-public class C6 {
+public class C8 {
 	static ArrayList<ArrayList<Integer>> adj;
 	static char[] nodes;
 	public static void main(String args[]) throws IOException {
@@ -20,25 +17,21 @@ public class C6 {
 		BufferedReader br = new BufferedReader(new FileReader("censor.in"));
 		String S = br.readLine(); // string
 		int N = Integer.parseInt(br.readLine()); // num censored words
-		String[] C = new String[N]; // list of words
-//		ArrayList[] C = new ArrayList[N];
-		
+		ArrayList<Character>[] C = new ArrayList[N]; // list of words
 		int longest = 0;
 		int totLen = 0;
 		for (int i = 0; i < N; i++) {
+			C[i] = new ArrayList<Character>();
 			String cur = br.readLine();
-			C[i] = cur;
-//			C[i] = new ArrayList<Character>();
-//			
-//			for (int j = 0; j < N; j++) {
-//				C[i].add(cur.charAt(j));
-//			}
-			
+			for (int j = 0; j < cur.length(); j++) {
+				C[i].add(cur.charAt(j));
+			}
 			longest = Math.max(longest, cur.length());
 			totLen += cur.length();
 		}
 		br.close();
-//		Arrays.sort(C); TODO: check if you NEED to sort
+		
+		Arrays.sort(C, listComparator); 
 
 		// Tree
 		adj = new ArrayList<ArrayList<Integer>>();
@@ -49,16 +42,16 @@ public class C6 {
 		int id = 1; // cur id (root node is 0, reserved)
 		
 		for (int i = 0; i < N; i++) { // loop through  words
-			String w = C[i];
+			List<Character>  w = C[i];
 //			ArrayList<Character> w = C[i];
 			
 			int ind = existsUpTo(w); // index 0...ind of w exist in the tree
-			String sub = w.substring(0, ind+1);
+			List<Character>  sub = w.subList(0, ind+1);
 //			List<Character> sub = w.subList(0, ind+1);
 			int stub = exists(sub); // the end of sub in the tree, where to start adding
 			
-			for (int j = ind+1; j < w.length(); j++) {
-				char cur = w.charAt(j);
+			for (int j = ind+1; j < w.size(); j++) {
+				char cur = w.get(j);
 				nodes[id] = cur; // create node
 				
 				int addind = leastAbove(adj.get(stub), nodes[id]); // TODO: have a version w/o this leastAbove thing
@@ -224,15 +217,27 @@ public class C6 {
 //		System.out.println("  ind: -1");
 		return -1;
 	}
-	public static int exists(String s) {
-//		 if string s exists in the current tree, return the end of path there
-//		 -1 means doesn't exist
+	public static Comparator<ArrayList<Character>> listComparator = new Comparator<ArrayList<Character>>(){
+
+		@Override
+		public int compare(ArrayList<Character> x, ArrayList<Character> y) {
+			int ind = 0;
+			while (x.get(ind).equals(y.get(ind))) {
+				ind++;
+			}
+			return x.get(ind).compareTo(y.get(ind));
+
+		}
+	};
+	public static int exists(List<Character> s) {
+		// if string s exists in the current tree, return the end of path there
+		// -1 means doesn't exist
 		int cur = 0;
 		
-		for (int i = 0; i < s.length(); i++) {
+		for (int i = 0; i < s.size(); i++) {
 			boolean found = false;
 			
-			int ind = bSearch(adj.get(cur), s.charAt(i));
+			int ind = bSearch(adj.get(cur), s.get(i));
 			
 			if (ind != -1) {
 				int neighNode = adj.get(cur).get(ind);
@@ -244,33 +249,13 @@ public class C6 {
 		}
 		return cur;
 	}
-//	public static int exists(List<Character> s) {
-//		// if string s exists in the current tree, return the end of path there
-//		// -1 means doesn't exist
-//		int cur = 0;
-//		
-//		for (int i = 0; i < s.size(); i++) {
-//			boolean found = false;
-//			
-//			int ind = bSearch(adj.get(cur), s.get(i));
-//			
-//			if (ind != -1) {
-//				int neighNode = adj.get(cur).get(ind);
-//				cur = neighNode;
-//				found = true;
-//			}
-//			
-//			if (!found) return -1;
-//		}
-//		return cur;
-//	}
-	public static int existsUpTo(String s) {
+	public static int existsUpTo(List<Character> s) {
 		// returns x where indices 0...x inclusive exist in the tree
 		// -1 means none exist
 		int cur = 0;
 		
-		for (int i = 0; i < s.length(); i++) {
-			int ind = bSearch(adj.get(cur), s.charAt(i));
+		for (int i = 0; i < s.size(); i++) {
+			int ind = bSearch(adj.get(cur), s.get(i));
 			
 			if (ind != -1) {
 				cur = adj.get(cur).get(ind);
@@ -278,24 +263,8 @@ public class C6 {
 				return i-1;
 			}
 		}
-		return s.length()-1;
+		return s.size()-1;
 	}
-//	public static int existsUpTo(List<Character> s) {
-//		// returns x where indices 0...x inclusive exist in the tree
-//		// -1 means none exist
-//		int cur = 0;
-//		
-//		for (int i = 0; i < s.size(); i++) {
-//			int ind = bSearch(adj.get(cur), s.get(i));
-//			
-//			if (ind != -1) {
-//				cur = adj.get(cur).get(ind);
-//			} else {
-//				return i-1;
-//			}
-//		}
-//		return s.size()-1;
-//	}
 	public static class State {
 		int nodeID;
 		int start;

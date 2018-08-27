@@ -5,10 +5,10 @@ import java.util.*;
  * Problem 2. Censoring (Gold)
  * 8/23/18
  * 
- * From solution
- * 9/15 cases on a good run
+ * removed sublist calls
+ * 15/15
  */
-public class CHashFinal {
+public class CHashFinal2 {
 	static int HM = 1000000007;
 	static int HA = 100000007;
 	static int HB = 101;
@@ -55,43 +55,51 @@ public class CHashFinal {
 		List<Integer> HAPW = new ArrayList<Integer>(); // HAPW.get(i) is HA ^ i
 		HAPW.add(1);
 		
+		int retlen = 0;
+		int hlen = 1;
+		int hapwlen = 1;
+		
 		for (int i = 0; i < S.length(); i++) { // loop through string
 			int ch = S.charAt(i)-'a'; // current char
 			
 //			System.out.println("i: " + i + " ch: " + ch + " H: " + H);
 			
 			// update hashes and ret
-			ret.add( S.charAt(i) );
-		
-			H.add(hext(H.get(H.size()-1), ch));
-			HAPW.add((int) ((long) (HAPW.get(HAPW.size()-1) * (long) HA) % HM));
+			if (retlen < ret.size()) ret.set(retlen, S.charAt(i));
+			else ret.add( S.charAt(i) );
 			
-//			System.out.println(ret.length());
-//			System.out.println(H.size());
-//			System.out.println();
+			int val = hext(H.get(hlen-1), ch);
+			if (hlen < H.size()) H.set(hlen, val);
+			else H.add(val);
+			
+			val = (int) ((long) (HAPW.get(hapwlen-1) * (long) HA) % HM);
+			if (hapwlen < HAPW.size()) HAPW.set(hapwlen, val);
+			else HAPW.add(val);
+			
+			retlen++;
+			hlen++;
+			hapwlen++;
+
 			// loop through hashes
 			for (int hashLen : m.keySet()) { // string lengths
-				if (hashLen > ret.size()) continue; // catch oob
+				if (hashLen > retlen) continue; // catch oob
 				
 				boolean found = false;
 				
 				// calculate the hash of suffix of ret with length == hashLen
-				int preHash = (int) (( (long) H.get(ret.size()-hashLen) * (long) HAPW.get(hashLen) ) % HM);
-				int realHash = (HM + ( H.get(H.size()-1) - preHash)) % HM;
+				int preHash = (int) (( (long) H.get(retlen-hashLen) * (long) HAPW.get(hashLen) ) % HM);
+				int realHash = (HM + ( H.get(hlen-1) - preHash)) % HM;
 				
 				ArrayList<String> a = m.get(hashLen).get(realHash);
 				if (a != null) { // get hash
-					
-//					List<Character> b = ret.subList(ret.size()-hashLen, ret.size());
-					
+										
 					for (String x : a) {
 						
 						boolean eq = true;
 						
 						for (int k = 0; k < x.length(); k++) {
 //							if (x.charAt(k) != b.get(k)) {
-							if (x.charAt(k) != ret.get(ret.size()-hashLen+k)) {
-//								ret.get(ret.size()-hashLen+k
+							if (x.charAt(k) != ret.get(retlen-hashLen+k)) {
 								eq = false;
 								break;
 							}
@@ -99,9 +107,9 @@ public class CHashFinal {
 						
 						if (eq) {
 							// if they are the same string
-							ret = ret.subList(0, ret.size()-hashLen);
-							H = H.subList(0, H.size()-hashLen);
-							HAPW = HAPW.subList(0, HAPW.size()-hashLen);
+							retlen = retlen-hashLen;
+							hlen = hlen-hashLen;
+							hapwlen = hapwlen-hashLen;
 
 				            found = true;
 				            break;
@@ -114,13 +122,11 @@ public class CHashFinal {
 			
 		}
 		
-		
-//		System.out.println(ret);
 		PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("censor.out")));
 
-		for (int i = 0; i < ret.size(); i++) {
+		for (int i = 0; i < retlen; i++) {
 			pw.print(ret.get(i));
-			System.out.print(ret.get(i));
+//			System.out.print(ret.get(i));
 		}
 		pw.close();
 	}

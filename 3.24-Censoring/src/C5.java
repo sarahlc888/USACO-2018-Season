@@ -6,10 +6,7 @@ import java.util.*;
  * Problem 2. Censoring (Gold)
  * 8/23
  * 
- * formerly 8/15 correct
- * DROPPED, NOW ONLY 5/15!?
- * back up to 6/15
- * back up to 7 or 8 with the list instead of string ret
+ * 7/15 with the list instead of string ret
  * 
  * 
  * gave up

@@ -8,9 +8,9 @@ import java.util.*;
  * Aho-Corasick algo
  * 
  * copied off of the answer
- * times out, 10/15 only....
+ * 15/15!!!! got rid of all instances of sublist
  */
-public class CTrieFinal2 {
+public class CTrieFinal3 {
 	
 	public static void main(String args[]) throws IOException {
 		
@@ -83,24 +83,38 @@ public class CTrieFinal2 {
 		List<Node> trie2 = new ArrayList<Node>(); 
 		trie2.add(root);
 		
-		int endLen = 0;
+		int sizeRet = 0;
+		int sizeTrie2 = 1;
 		
 		for (int i = 0; i < S.length(); i++) {
 			
 			char ch = S.charAt(i);
 			int chval = ch-'a';
-			Node n = trie2.get(trie2.size()-1).step(chval); // look for chval off of the last node n
-			ret.add(ch);
-			trie2.add(n);
+			Node n = trie2.get(sizeTrie2-1).step(chval); // look for chval off of the last node n
+			
+			if (sizeRet < ret.size()) {
+				ret.set(sizeRet, ch);
+			} else {
+				ret.add(ch);
+			}
+			if (sizeTrie2 < trie2.size()) {
+				trie2.set(sizeTrie2, n);
+			} else {
+				trie2.add(n);
+			}
+			sizeRet++;
+			sizeTrie2++;
 			
 //			System.out.println("i: " + i + " ch: " + ch);
 			
 			if (n.ind != -1) {
 				// if this is the end of a word
 //				System.out.println("  END of word " + C[n.ind]);
-				ret = ret.subList(0, ret.size()-C[n.ind].length());
+//				ret = ret.subList(0, sizeRet-C[n.ind].length());
+				sizeRet = sizeRet-C[n.ind].length();
 //				System.out.println("  ret: " + ret);
-				trie2 = trie2.subList(0, ret.size()+1);
+//				trie2 = trie2.subList(0, sizeRet+1);
+				sizeTrie2 = sizeRet + 1;
 //				System.out.println("  trie size: " + trie2.size());
 			}
 		}
@@ -108,7 +122,7 @@ public class CTrieFinal2 {
 //		System.out.println(ret);
 		
 		PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("censor.out")));
-		for (int i = 0; i < ret.size(); i++) {
+		for (int i = 0; i < sizeRet; i++) {
 			pw.print(ret.get(i));
 //			System.out.print(ret.get(i));
 		}
