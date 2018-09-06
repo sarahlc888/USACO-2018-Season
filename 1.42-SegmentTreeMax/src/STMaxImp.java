@@ -25,7 +25,7 @@ public class STMaxImp {
 		int[] numarr; // number array, stores all the original numbers
 		int[] treearr; // tree array, stores all the numbers and sums
 		int height; // number of layers of the tree
-		int maxsize; // max nodes able to fit in the set height
+		int maxsize; // max size of binary tree with the set height
 		int startind; // start of the tree
 		int endind; // end of the tree
 		
@@ -43,15 +43,10 @@ public class STMaxImp {
 			Arrays.fill(treearr, Integer.MIN_VALUE); // fill with  min value so the 0s don't interfere w/ neg
 			endind = n-1; // mark the end of the nums
 		}
-		
-		
-		public void buildtree(int[] numsIn) { // build the tree
-			// copy in the nums array
-			for (int i = 0; i < numarr.length; i++) {
-				numarr[i] = numsIn[i];
-			}
-			
-			buildTreeRec(startind, endind, 0); // build the tree
+		public void buildtree(int[] numsIn) { 
+			for (int i = 0; i < numarr.length; i++)
+				numarr[i] = numsIn[i]; // copy in the nums array
+			buildTreeRec(startind, endind, 0); 
 		}
 		public int buildTreeRec(int lo, int hi, int cur) {
 			// start from the root, build with divide and conquer
@@ -122,21 +117,18 @@ public class STMaxImp {
 				if (sind != eind ) { // until you go through everything, split and go through the whole subtree
 					int mid = (sind + eind) / 2;
 					treearr[cur] = Math.max(setValueRec(sind, mid, pos, diff, leftind(cur)),
-					setValueRec(mid+1, eind, pos, diff, rightind(cur)));
+							setValueRec(mid+1, eind, pos, diff, rightind(cur)));
 					return treearr[cur];
 				} else {
 					// leaf node of pos, altered above, still return
-					
 					return treearr[cur];
 				}
 				
-			} else { // out range, no changes (pos < sind || pos > eind)
+			} else { // out of range, no changes (pos < sind || pos > eind)
 				return treearr[cur]; 
 			}
 			
 		}
-		
-		
 		public int parind(int j) { // returns ind of parent of node j
 			return (j-1)/2;
 		}
