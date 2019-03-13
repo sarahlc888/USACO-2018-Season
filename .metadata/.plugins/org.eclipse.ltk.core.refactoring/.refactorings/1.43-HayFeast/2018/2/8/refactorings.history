@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;1.43-HayFeast/hayfeast_gold_dec17&apos; to &apos;testData&apos;" description="Rename resource &apos;hayfeast_gold_dec17&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="hayfeast_gold_dec17" name="testData" stamp="1518918494363" updateReferences="true"/>
-</session>

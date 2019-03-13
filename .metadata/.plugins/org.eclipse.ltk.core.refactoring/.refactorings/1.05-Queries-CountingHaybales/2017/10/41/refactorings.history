@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;1.05-Queries/queries.in&apos; to &apos;Queries.in&apos;" description="Rename resource &apos;queries.in&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="queries.in" name="Queries.in" stamp="1507742395224" updateReferences="true"/>
-</session>

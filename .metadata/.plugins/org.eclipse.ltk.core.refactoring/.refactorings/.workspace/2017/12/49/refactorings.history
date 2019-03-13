@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename Java project &apos;DiamondCollector&apos; to &apos;1.20-DiamondCollector&apos;&#x0A;- Original element: &apos;DiamondCollector&apos;&#x0A;- Renamed element: &apos;DiamondCollector&apos;&#x0A;- Update references to refactored element" description="Rename Java project &apos;DiamondCollector&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=DiamondCollector" name="1.20-DiamondCollector" references="true" stamp="1512848546644" version="1.0"/>
-</session>

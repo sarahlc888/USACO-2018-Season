@@ -1,9 +1,0 @@
-1517802900332	Rename local variable 'val'
-1517802998000	Rename local variable 'v'
-1517805052976	Delete element
-1518056238975	Rename type 'BHArrayImp'
-1518056274274	Delete element
-1518056281866	Rename type 'BHMin'
-1518061527770	Rename method 'getParentInd'
-1518061535941	Rename method 'getLeftInd'
-1518061549038	Rename method 'getRightInd'

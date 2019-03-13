@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;STMaxImp.SegmentTreeSum&apos; to &apos;SegmentTreeMax&apos;&#x0A;- Original project: &apos;1.42-SegmentTreeMax&apos;&#x0A;- Original element: &apos;STMaxImp.SegmentTreeSum&apos;&#x0A;- Renamed element: &apos;STMaxImp.SegmentTreeMax&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;SegmentTreeSum&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{STMaxImp.java[STMaxImp[SegmentTreeSum" matchStrategy="1" name="SegmentTreeMax" qualified="false" references="true" similarDeclarations="false" stamp="1518566879342" textual="false" version="1.0"/>
-</session>

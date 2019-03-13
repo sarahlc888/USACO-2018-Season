@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;1.19-ModuloProblem/modulo problem testData&apos; to &apos;testData&apos;" description="Rename resource &apos;modulo problem testData&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="modulo problem testData" name="testData" stamp="1512086495863" updateReferences="true"/>
-</session>

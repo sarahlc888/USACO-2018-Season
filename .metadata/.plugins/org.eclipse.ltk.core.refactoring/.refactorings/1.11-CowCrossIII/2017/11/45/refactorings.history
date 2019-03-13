@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename local variable &apos;current&apos; in &apos;CowCrossIII.main(...)&apos; to &apos;curPt&apos;&#x0A;- Original project: &apos;1.11-CowCrossIII&apos;&#x0A;- Original element: &apos;CowCrossIII.main(String[]).current&apos;&#x0A;- Renamed element: &apos;current&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;current&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{CowCrossIII.java[CowCrossIII~main~\[QString;@current!2600!2637!2606!2612!QPoint;!0!false" name="curPt" references="true" stamp="1509893517525" version="1.0"/>
-</session>
