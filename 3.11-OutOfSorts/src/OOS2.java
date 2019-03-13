@@ -21,7 +21,7 @@ public class OOS2 {
 		br.close();
 		Arrays.sort(trackedArr);
 
-//		System.out.println(Arrays.toString(trackedArr));
+		System.out.println(Arrays.toString(trackedArr));
 		
 		int maxval = 0; // max crossings of the border
 		int prev = 0;
@@ -72,8 +72,8 @@ public class OOS2 {
 			return x-o.x;
 		}
 		public String toString() {
-//			return x + " " + y;
-			return ""+ind;
+			return x + " " + ind;
+//			return ""+ind;
 		}
 	}
 

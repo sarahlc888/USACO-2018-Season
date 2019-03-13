@@ -10,6 +10,230 @@
       <link>http://www.eclipse.org</link>
     </image>
     <item>
+      <title><![CDATA[Participate in the 2019 IoT Developer Survey!]]></title>
+      <link><![CDATA[https://blogs.eclipse.org/post/thabang-mashologu/participate-2019-iot-developer-survey]]></link>
+      <description><![CDATA[The Eclipse IoT Working Group is pleased to launch the 2019 IoT Developer Survey and we want to hear from you!]]></description>
+      <pubDate>Mon, 11 Feb 2019 10:10:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
+      <title><![CDATA[Eclipse Newsletter - Editorial Calendar 2019]]></title>
+      <link><![CDATA[https://blogs.eclipse.org/post/jameka-woodberry/eclipse-newsletter-%E2%80%94-editorial-calendar-2019]]></link>
+      <description><![CDATA[Our goal with the newsletter is to deliver great content that educates, motivates, and inspires our community!]]></description>
+      <pubDate>Mon, 11 Feb 2019 10:10:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
+      <title><![CDATA[Open Source: Can you afford not to get involved?]]></title>
+      <link><![CDATA[https://blogs.eclipse.org/post/thabang-mashologu/open-source-can-you-afford-not-get-involved]]></link>
+      <description><![CDATA[To say that the open source community is on a roll would be an understatement.]]></description>
+      <pubDate>Thu, 07 Feb 2019 08:30:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
+      <title><![CDATA[Eclipse Foundation: 15 Years Young]]></title>
+      <link><![CDATA[https://blogs.eclipse.org/post/mike-milinkovich/eclipse-foundation-15-years-young]]></link>
+      <description><![CDATA[Saturday, February 2, 2019 marks the 15th birthday of the Eclipse Foundation. That was the day that it was publicly and officially announced, and the opening day of the first ever EclipseCon conference.]]></description>
+      <pubDate>Fri, 01 Feb 2019 10:00:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+     <item>
+      <title><![CDATA[Jakartablogs.ee is Live! PS: Bloggers, We Need You!]]></title>
+      <link><![CDATA[https://blogs.eclipse.org/post/thabang-mashologu/jakartablogsee-live-ps-bloggers-we-need-you]]></link>
+      <description><![CDATA[Jakartablogs.ee is the new blog home for our global community to stay up to date on the latest Jakarta EE news, technologies, best practices, and more.]]></description>
+      <pubDate>Tue, 29 Jan 2019 15:20:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
+      <title><![CDATA[Eclipse Specification Process IV: The Specification Committee Votes]]></title>
+      <link><![CDATA[https://blogs.eclipse.org/post/wayne-beaton/eclipse-specification-process-iv-specification-committee-votes]]></link>
+      <description><![CDATA[One key difference between Eclipse open source software projects and open source specification projects is that specification projects must be aligned with exactly one specification committee]]></description>
+      <pubDate>Mon, 21 Jan 2019 14:00:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
+      <title><![CDATA[Tradista Joins Eclipse Foundation]]></title>
+      <link><![CDATA[https://globenewswire.com/news-release/2019/01/10/1685988/0/en/Tradista-Joins-Eclipse-Foundation.html]]></link>
+      <description><![CDATA[Tradista will contribute to the Jakarta EE project, bringing its long experience in the Java EE platform applied to the financial sector.]]></description>
+      <pubDate>Thu, 10 Jan 2019 08:35:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
+      <title><![CDATA[Eclipse Development Process 2018]]></title>
+      <link><![CDATA[https://blogs.eclipse.org/post/wayne-beaton/eclipse-development-process-2018]]></link>
+      <description><![CDATA[In December 7/2018, the Eclipse Foundation's Board of Directors approved a new edition of the Eclipse Development Process (EDP) which introduces one particularly significant change, along with a small number of other useful changes.]]></description>
+      <pubDate>Wed, 19 Dec 2018 09:35:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
+      <title><![CDATA[Eclipse Foundation Drives $9 Billion in Open Source Innovation]]></title>
+      <link><![CDATA[https://globenewswire.com/news-release/2018/12/18/1668576/0/en/Eclipse-Foundation-Drives-9-Billion-in-Open-Source-Innovation.html]]></link>
+      <description><![CDATA[Global open source foundation finishes 2018 with 360+ open source projects, 162+ million lines of code written and more than 275 sponsor members]]></description>
+      <pubDate>Wed, 19 Dec 2018 09:35:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>    
+    <item>
+      <title><![CDATA[Read the newest Jakarta EE Newsletter!]]></title>
+      <link><![CDATA[https://www.eclipse.org/community/eclipse_newsletter/2018/november/]]></link>
+      <description><![CDATA[This month we bring you a fully loaded Jakarta EE newsletter with a mix of technical content, community news, and a tutorial!]]></description>
+      <pubDate>Fri, 30 Nov 2018 09:15:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
+      <title><![CDATA[Eclipse Foundation Specification Process, Part III: Creation]]></title>
+      <link><![CDATA[https://blogs.eclipse.org/post/wayne-beaton/eclipse-foundation-specification-process-part-iii-creation]]></link>
+      <description><![CDATA[Creation' is an integral part of the Eclipse Foundation Specification Process. Read Wayne Beaton's newest blog on the topic.]]></description>
+      <pubDate>Fri, 30 Nov 2018 09:15:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
+      <title><![CDATA[How is the Eclipse Foundation Specification Process (EFSP) different from Java Community Process (JCP)?]]></title>
+      <link><![CDATA[https://blogs.eclipse.org/post/tanja-obradovic/how-eclipse-foundation-specification-process-efsp-different-java-community]]></link>
+      <description><![CDATA[There are many differences between Eclipse Foundation Specification Process (EFSP) and Java Community Process (JCP), let's focus on my top 5!]]></description>
+      <pubDate>Tue, 27 Nov 2018 12:15:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
+      <title><![CDATA[Eclipse Foundation Specification Process, Part II: the EFSP]]></title>
+      <link><![CDATA[https://blogs.eclipse.org/post/wayne-beaton/eclipse-foundation-specification-process-part-ii-efsp]]></link>
+      <description><![CDATA[The Eclipse Foundation Specification Process defines a general framework for developing specifications in open source at the Eclipse Foundation.]]></description>
+      <pubDate>Tue, 27 Nov 2018 12:15:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
+      <title><![CDATA[Eclipse Foundation Specification Process, Part I: The EDP]]></title>
+      <link><![CDATA[https://blogs.eclipse.org/post/wayne-beaton/eclipse-foundation-specification-process-part-i-edp]]></link>
+      <description><![CDATA[A quick Eclipse Development Process (EDP) primer.]]></description>
+      <pubDate>Thu, 08 Nov 2018 11:15:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
+      <title><![CDATA[Eclipse Foundation Hosted Services Privacy and Acceptable Usage Policy]]></title>
+      <link><![CDATA[https://blogs.eclipse.org/post/christopher-guindon/eclipse-foundation-hosted-services-privacy-and-acceptable-usage-policy]]></link>
+      <description><![CDATA[The Eclipse Foundation recently made available a new policy to make sure that our projects and hosted services are compliant with the General Data Protection Regulation (GDPR).]]></description>
+      <pubDate>Thu, 08 Nov 2018 11:15:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
+      <title><![CDATA[Eclipse Foundation Updating Contributor and Committer Agreements]]></title>
+      <link><![CDATA[https://blogs.eclipse.org/post/mike-milinkovich/new-eclipse-foundation-committer-and-contributor-agreements]]></link>
+      <description><![CDATA[See Mike Milinkovich's blog explaining the upcoming changes to these agreements and what steps are being taken to implement the update]]></description>
+      <pubDate>Mon, 05 Nov 2018 14:15:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
+      <title><![CDATA[Eclipse Foundation Publishes MicroProfile eBook]]></title>
+      <link><![CDATA[http://globenewswire.ca/news-release/2018/11/05/1644913/0/en/Eclipse-Foundation-Publishes-MicroProfile-eBook.html]]></link>
+      <description><![CDATA[15 page executive guide sets context for enterprises evaluating MicroProfile & enterprise Java microservices for digital transformation]]></description>
+      <pubDate>Mon, 05 Nov 2018 11:00:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
+      <title><![CDATA[Participate in the 2018 Eclipse Foundation Brand Survey]]></title>
+      <link><![CDATA[https://blogs.eclipse.org/post/thabang-mashologu/participate-2018-eclipse-foundation-brand-survey]]></link>
+      <description><![CDATA[We are excited to launch the 2018 edition of our brand survey!]]></description>
+      <pubDate>Mon, 05 Nov 2018 10:45:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+     <item>
+      <title><![CDATA[Case Study: How Bosch Is Succeeding with Open Source at Eclipse IoT]]></title>
+      <link><![CDATA[https://mmilinkov.wordpress.com/2018/10/02/how-bosch-is-succeeding-with-open-source/]]></link>
+      <description><![CDATA[How is it that a 150-year-old, 400,000 employee industrial conglomerate is competing and winning in the rapidly involving IoT software industry?]]></description>
+      <pubDate>Tue, 02 Oct 2018 09:00:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
+      <title><![CDATA[Eclipse CBI - Common Build Infrastructure changes]]></title>
+      <link><![CDATA[https://blogs.eclipse.org/post/denis-roy/eclipse-cbi-common-build-infrastructure-changes]]></link>
+      <description><![CDATA[The Eclipse CBI, which traces its roots back to 2006, has undergone some important changes recently, including a new Kubernetes+Docker-powered environment at https://jenkins.eclipse.org that re announced previously.]]></description>
+      <pubDate>Fri, 28 Sep 2018 15:00:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
+     <title><![CDATA[Eclipse Foundation and Cloud Native Computing Foundation Collaborate to Grow Kubernetes Use Cases in Trillion Dollar IoT Market]]></title>
+      <link><![CDATA[https://globenewswire.com/news-release/2018/09/26/1576651/0/en/Eclipse-Foundation-and-Cloud-Native-Computing-Foundation-Collaborate-to-Grow-Kubernetes-Use-Cases-in-Trillion-Dollar-IoT-Market.html]]></link>
+      <description><![CDATA[Red Hat and other Eclipse IoT members will collaborate in working group to extend capabilities of Kubernetes for IoT Edge use cases.]]></description>
+      <pubDate>Thu, 27 Sep 2018 09:00:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
+    <title><![CDATA[K8s at the Edge - Some Context on the New Kubernetes IoT Working Group]]></title>
+      <link><![CDATA[http://bit.ly/2Du9i4p]]></link>
+      <description><![CDATA[The Eclipse Foundation is excited to be part of today's announcement of a new Kubernetes IoT Edge Working Group.]]></description>
+      <pubDate>Wed, 26 Sep 2018 08:30:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
+    <title><![CDATA[Welcoming GlassFish to the Eclipse Foundation]]></title>
+      <link><![CDATA[https://blogs.eclipse.org/post/tanja-obradovic/welcoming-glassfish-eclipse-foundation]]></link>
+      <description><![CDATA[A major milestone was achieved yesterday! The GlassFish code from Oracle made its home in the Eclipse Foundation's Git repositories, starting a new era of Eclipse GlassFish. ]]></description>
+      <pubDate>Wed, 19 Sep 2018 14:30:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
+    <title><![CDATA[An $8.7 Billion Shared Investment: Sizing the Economic Value of Eclipse Community Collaboration]]></title>
+      <link><![CDATA[https://blogs.eclipse.org/post/thabang-mashologu/87-billion-shared-investment-sizing-economic-value-eclipse-community]]></link>
+      <description><![CDATA[What is the value of the code contributed by the Eclipse community? We estimate that the roughly 162 million total physical source lines of code in Eclipse repositories represent a $8.7 billion USD shared technology investment by our community.]]></description>
+      <pubDate>Thu, 13 Sep 2018 09:30:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
+    <title><![CDATA[Mizuho International Joins Eclipse Foundation]]></title>
+      <link><![CDATA[http://www.globenewswire.com/news-release/2018/09/11/1569175/0/en/Mizuho-International-Joins-Eclipse-Foundation.html]]></link>
+      <description><![CDATA[Mizuho International, the securities & investment banking arm of the Mizuho Financial Group, has joined the Eclipse Foundation.]]></description>
+      <pubDate>Tue, 11 Sep 2018 14:55:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+   <item>
+    <title><![CDATA[How many lines of Open Source code are hosted at the Eclipse Foundation?]]></title>
+      <link><![CDATA[https://blog.benjamin-cabe.com/2018/09/04/how-many-lines-of-open-source-code-are-hosted-at-the-eclipse-foundation]]></link>
+      <description><![CDATA[As of August 1st, there are 330 active open-source projects and 1120 Git repositories, as for lines of code... ]]></description>
+      <pubDate>Wed, 05 Sep 2018 09:30:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
+      <title><![CDATA[Talk with your team about EclipseCon Europe 2018]]></title>
+      <link><![CDATA[https://eclipsecon.org/europe2018]]></link>
+      <description><![CDATA[Review the program - talks, keynotes and special events - and register by October 1 for the best rates!]]></description>
+      <pubDate>Tue, 04 Sep 2018 10:00:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
+      <title><![CDATA[Eclipse Foundation Welcomes 16 New Members As Jakarta EE and Eclipse IoT Developer Communities Surge]]></title>
+      <link><![CDATA[https://globenewswire.com/news-release/2018/08/29/1558325/0/en/Eclipse-Foundation-Welcomes-16-New-Members-As-Jakarta-EE-and-Eclipse-IoT-Developer-Communities-Surge.html]]></link>
+      <description><![CDATA[Today, the Eclipse Foundation announced the addition of 16 new members.]]></description>
+      <pubDate>Wed, 29 Aug 2018 15:00:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
       <title><![CDATA[Eclipse Foundation and IBM Partner to Help Fight Natural Disasters in New Global Open Source Software Initiative]]></title>
       <link><![CDATA[http://www.globenewswire.com/news-release/2018/08/21/1554460/0/en/Eclipse-Foundation-and-IBM-Partner-to-Help-Fight-Natural-Disasters-in-New-Global-Open-Source-Software-Initiative.html]]></link>
       <description><![CDATA[OSS developers are encouraged to create solutions that help communities improve disaster preparedness & recovery.]]></description>

@@ -6,7 +6,7 @@ import java.util.*;
  * see notes in google drive
  * 
  * should work, works on rudimentary test cases
- * 
+ * remove non-hull cows as soon as they're marked as not in the hull
  */
 public class ConvexHull {
 	static Stack<Pair> ch;

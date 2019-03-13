@@ -1,4 +1,5 @@
 /*
+ * 10/9 lesson
  * revisit of longest increasing subsequence, N log N algo
  * Dr. Ming's code
  */

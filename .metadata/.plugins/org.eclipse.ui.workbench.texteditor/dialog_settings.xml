@@ -2,29 +2,33 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="substring" key="selection"/>
-		<item value="true" key="casesensitive"/>
+		<item value="while" key="selection"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="substring"/>
+			<item value="curx"/>
 			<item value="while"/>
-			<item value="bits.get(0)"/>
-			<item value="bits.get(0"/>
-			<item value="SOURCE: "/>
-			<item value="(&quot;SOURCE"/>
-			<item value="12"/>
-			<item value="382"/>
 			<item value="Integer"/>
-			<item value="intInteger"/>
-			<item value="int "/>
-			<item value="int"/>
-			<item value="111111011"/>
-			<item value="MAX_VALUE"/>
-			<item value="System.out"/>
+			<item value="bits"/>
+			<item value="Pair"/>
+			<item value="[3, 3][6, 6]"/>
+			<item value="-1"/>
+			<item value="-2"/>
+			<item value="adjlist"/>
+			<item value="GREG"/>
+			<item value="oge"/>
+			<item value="adgmgd"/>
+			<item value="GE"/>
+			<item value="CE"/>
+			<item value="ADI"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Long"/>
+			<item value="key"/>
+			<item value=""/>
+			<item value="relGradYear"/>
 			<item value="gen"/>
 			<item value="//System.out"/>
 			<item value="suff"/>
@@ -36,17 +40,13 @@
 			<item value="pos2"/>
 			<item value="//Sys"/>
 			<item value="Sys"/>
-			<item value="310"/>
-			<item value="Integer"/>
-			<item value="int"/>
-			<item value="cowReq"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="294" key="DIALOG_WIDTH"/>
+		<item value="357" key="DIALOG_WIDTH"/>
 		<item value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont" key="DIALOG_FONT_NAME"/>
-		<item value="292" key="DIALOG_HEIGHT"/>
-		<item value="0" key="DIALOG_X_ORIGIN"/>
-		<item value="261" key="DIALOG_Y_ORIGIN"/>
+		<item value="334" key="DIALOG_HEIGHT"/>
+		<item value="923" key="DIALOG_X_ORIGIN"/>
+		<item value="257" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

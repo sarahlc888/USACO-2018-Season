@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-// minimum spanning tree
+// minimum spanning tree PRIMS
 
 // refer to pg. 140 of comp prog book
 // uses priority queue to find shortest edge to add to tree instead of linear

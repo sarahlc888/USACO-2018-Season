@@ -56,7 +56,8 @@ public class Dijkstra {
 	}
 	public static void dijkstra(int u) { // starting node u
 		
-		// O(N^2) for all nodes (only process once each), look at all neighbors
+		// O(N^2) 
+		// for all nodes (only process once each), look at all neighbors
 		
 		// init dist
 		for (int i = 0; i < V; i++) {
